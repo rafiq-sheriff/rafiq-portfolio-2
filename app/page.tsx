@@ -1,30 +1,14 @@
 'use client';
 import type React from 'react';
-import Hero from '@/components/pages/Hero';
+import Navbar from '@/components/ui/navbar'; // New navbar
 import About from '@/components/pages/About';
 import Work from '@/components/pages/Work';
 import Process from '@/components/pages/Process';
 import Contact from '@/components/pages/Contact';
 import Footer from '@/components/pages/Footer';
+import Hero5 from '@/components/pages/hero/hero5';
 
 export default function Portfolio() {
-  const heroWords = [
-    {
-      text: 'Hi,',
-    },
-    {
-      text: "I'm",
-    },
-    {
-      text: 'Rafiq',
-      className: 'text-blue-500 dark:text-blue-500',
-    },
-    {
-      text: 'Sheriff S',
-      className: 'text-purple-500 dark:text-purple-500',
-    },
-  ];
-
   const designSkills = [
     { name: 'Figma', level: 90 },
     { name: 'Canva', level: 90 },
@@ -41,7 +25,6 @@ export default function Portfolio() {
     { name: 'Tailwind', level: 70 },
     { name: 'Wix', level: 90 },
     { name: 'Framer', level: 70 },
-
   ];
 
   const otherSkills = [
@@ -73,16 +56,21 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-neutral-950 relative antialiased">
-      <Hero heroWords={heroWords} />
+    <div className="min-h-screen w-full bg-[#F7F7F7] relative antialiased overflow-x-hidden">
+      <Navbar />
+
+      <div className="pt-20">
+        <Hero5 />
+      </div>
       <About
         designSkills={designSkills}
         developmentSkills={developmentSkills}
         otherSkills={otherSkills}
       />
       <Work />
-      <Process processSteps={processSteps} />
+      <Process />
       <Contact />
+
       <Footer />
     </div>
   );

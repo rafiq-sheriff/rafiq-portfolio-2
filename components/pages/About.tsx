@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 
 interface Skill {
   name: string;
@@ -10,67 +9,79 @@ interface AboutProps {
   designSkills: Skill[];
   developmentSkills: Skill[];
   otherSkills: Skill[];
+  gradientFrom?: string; // e.g. '#6EE7F9'
+  gradientTo?: string; // e.g. '#9333EA'
 }
 
 export default function About({
   designSkills,
   developmentSkills,
   otherSkills,
+  gradientFrom,
+  gradientTo,
 }: AboutProps) {
+  // These are not currently used, but left for future gradient customization
+  // const gradientStart = gradientFrom ?? '#7C3AED';
+  // const gradientEnd = gradientTo ?? '#DB2777';
+
+  const progressStyle = (level: number) => ({
+    width: `${level}%`,
+    backgroundImage: `linear-gradient(to right, #44A54A, #44A54A)`,
+  });
+
   return (
-    <div className="py-20 px-8 max-w-6xl mx-auto">
-      <h2 className="text-3xl md:text-5xl text-neutral-200 font-bold text-center mb-16">
-        About Me
-      </h2>
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
-        {/* Left side - Image and Text */}
-        <div className="flex flex-col gap-8">
-          {/* Main Image */}
-          <div className="w-85 h-85 mx-auto  overflow-hidden">
-            <Image
-              src="/images/image new.png"
-              alt="Rafiq Sheriff - Creative Designer and Developer"
-              className="w-full h-full object-cover"
-              width={330}
-              height={330}
-            />
+    <div id="about" className="py-20 px-8 bg-[#ffffff]">
+      {/* Intro block matching hero look */}
+      <div className="max-w-6xl mx-auto text-center mb-12">
+        <h2 className="text-4xl md:text-6xl font-semibold text-[#1C1C1C] mb-6">
+          About Me
+        </h2>
+        <p className="text-lg md:text-2xl font-medium text-[#505050] mb-8">
+          I'm a creative professional who delivers meaningful experiences by
+          blending design thinking, modern tools, web development, and artistic
+          vision across apps, branding, and video editing.
+        </p>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-[#505050]">
+          <div className="flex items-center bg-[#E5EFE6] px-4 py-2 rounded-full gap-2 text-sm md:text-base">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#44A54A]"></span>
+            <span>UI/UX Designer</span>
           </div>
-          {/* Text content */}
-          <div>
-            <p className="text-neutral-300 text-lg leading-relaxed mb-6">
-              I'm Rafiq Sheriff S, a creative soul blending design thinking,
-              modern tools, and artistic vision to craft impactful digital
-              experiences.
-            </p>
-            <p className="text-neutral-300 text-lg leading-relaxed mb-6">
-              I design with emotion and purpose, ensuring every project
-              resonates visually and functionally.
-            </p>
-            <p className="text-neutral-300 text-lg font-medium">
-              I prioritize clear communication, timely updates, and adaptability
-              to each project's unique context.
-            </p>
+          <div className="flex items-center bg-[#E5EFE6] px-4 py-2 rounded-full gap-2 text-sm md:text-base">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#44A54A]"></span>
+            <span>Web Developer</span>
+          </div>
+          <div className="flex items-center bg-[#E5EFE6] px-4 py-2 rounded-full gap-2 text-sm md:text-base">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#44A54A]"></span>
+            <span>Creative Technologist</span>
+          </div>
+          <div className="flex items-center bg-[#E5EFE6] px-4 py-2 rounded-full gap-2 text-sm md:text-base">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#44A54A]"></span>
+            <span>Logo Designer</span>
+          </div>
+          <div className="flex items-center bg-[#E5EFE6] px-4 py-2 rounded-full gap-2 text-sm md:text-base">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#44A54A]"></span>
+            <span>Photographer</span>
           </div>
         </div>
-
-        {/* Right side - Skills section */}
-        <div className="space-y-8">
+      </div>
+      <div className="max-w-3xl mx-auto">
+        <div className="space-y-8 ">
           <div>
-            <h3 className="text-xl text-neutral-200 font-semibold mb-4">
+            <h3 className="text-xl text-[#1C1C1C] font-semibold mb-4">
               Design & Creative Tools
             </h3>
             <div className="space-y-3">
               {designSkills.map((skill, index) => (
                 <div key={index} className="flex items-center justify-between">
-                  <span className="text-neutral-300">{skill.name}</span>
+                  <span className="text-[#505050]">{skill.name}</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 h-2 bg-neutral-800 rounded-full overflow-hidden">
+                    <div className="w-24 h-2 bg-[#E5EFE6] rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
-                        style={{ width: `${skill.level}%` }}
+                        className="h-full rounded-full"
+                        style={progressStyle(skill.level)}
                       />
                     </div>
-                    <span className="text-neutral-400 text-sm w-8">
+                    <span className="text-[#505050] text-sm w-8">
                       {skill.level}%
                     </span>
                   </div>
@@ -80,21 +91,21 @@ export default function About({
           </div>
 
           <div>
-            <h3 className="text-xl text-neutral-200 font-semibold mb-4">
+            <h3 className="text-xl text-[#1C1C1C] font-semibold mb-4">
               Development & Web
             </h3>
             <div className="space-y-3">
               {developmentSkills.map((skill, index) => (
                 <div key={index} className="flex items-center justify-between">
-                  <span className="text-neutral-300">{skill.name}</span>
+                  <span className="text-[#505050]">{skill.name}</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 h-2 bg-neutral-800 rounded-full overflow-hidden">
+                    <div className="w-24 h-2 bg-[#E5EFE6] rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-green-500 to-blue-600 rounded-full"
-                        style={{ width: `${skill.level}%` }}
+                        className="h-full rounded-full"
+                        style={progressStyle(skill.level)}
                       />
                     </div>
-                    <span className="text-neutral-400 text-sm w-8">
+                    <span className="text-[#505050] text-sm w-8">
                       {skill.level}%
                     </span>
                   </div>
@@ -104,21 +115,21 @@ export default function About({
           </div>
 
           <div>
-            <h3 className="text-xl text-neutral-200 font-semibold mb-4">
+            <h3 className="text-xl text-[#1C1C1C] font-semibold mb-4">
               Other Skills
             </h3>
             <div className="space-y-3">
               {otherSkills.map((skill, index) => (
                 <div key={index} className="flex items-center justify-between">
-                  <span className="text-neutral-300">{skill.name}</span>
+                  <span className="text-[#505050]">{skill.name}</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 h-2 bg-neutral-800 rounded-full overflow-hidden">
+                    <div className="w-24 h-2 bg-[#E5EFE6] rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"
-                        style={{ width: `${skill.level}%` }}
+                        className="h-full rounded-full"
+                        style={progressStyle(skill.level)}
                       />
                     </div>
-                    <span className="text-neutral-400 text-sm w-8">
+                    <span className="text-[#505050] text-sm w-8">
                       {skill.level}%
                     </span>
                   </div>

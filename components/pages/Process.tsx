@@ -1,46 +1,106 @@
-'use client';
-import { Meteors } from '@/components/ui/meteors';
+import { Calendar, MapPin } from 'lucide-react';
 
-interface ProcessStep {
-  title: string;
-  description: string;
-}
+const experiences = [
+  {
+    id: 1,
+    title: "Frontend Engineer",
+    company: "AS CODELABS",
+    location: "Chennai, Tamil Nadu",
+    period: "MAR 2025 - Present",
+    description: "I work as a Frontend Engineer, designing and developing modern, responsive, and user-friendly websites and applications. I combine creativity and clean code to bring ideas to life with efficient, scalable solutions.",
+    achievements: [
+      "Translating UI/UX designs into functional, visually appealing digital experiences.",
+      "Building dynamic, high-performance web applications using React, Tailwind CSS, HTML, and CSS, with a strong focus on clean design, smooth user experience, and responsive layouts that perform seamlessly across all devices.",
+      "Working in a startup environment, balancing creativity and technical precision to deliver complete digital solutions efficiently."
+    ]
+  },
+  {
+    id: 2,
+    title: "B.tech in Information Technology",
+    company: "Mohamed Sathak A.J.College of Engineering",
+    location: "Chennai, Tamil Nadu",
+    period: "2020 - 2024",
+    description: "I have completed my B.tech in Information Technology from Mohamed Sathak A.J.College of Engineering with a CGPA of 7.6.",
+    achievements: [
+      "I have learned about the basics of programming and web development.",
+      "I have learned about the basics of programming and web development.",
+      "Streamlined design processes reducing project turnaround by 25%"
+    ]
+  },
 
-interface ProcessProps {
-  processSteps: ProcessStep[];
-}
+];
 
-export default function Process({ processSteps }: ProcessProps) {
+export default function ExperienceSection() {
   return (
-    <div className="py-20 px-8 max-w-6xl mx-auto">
-      <h2 className="text-3xl md:text-5xl text-neutral-200 font-bold text-center mb-16">
-        My Process
-      </h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {processSteps.map((step, index) => (
-          <div key={index} className="relative w-full">
-            <div className="absolute inset-0 h-full w-full scale-[0.80] transform rounded-full bg-gradient-to-r from-blue-500 to-purple-600 blur-3xl opacity-30" />
-            <div className="relative flex h-full flex-col items-start justify-end overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 px-6 py-8 shadow-xl min-h-[280px]">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700 bg-gradient-to-r from-blue-500 to-purple-600">
-                <span className="text-white font-bold text-xl">
-                  {index + 1}
-                </span>
+    <section className="py-20 px-8 bg-[#FFFFFF]">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl text-[#1C1C1C] font-bold mb-4">
+            Education & Experience
+          </h2>
+
+        </div>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-0.5 w-0.5 h-full bg-[#D1D5DB]"></div>
+
+          {experiences.map((experience, index) => (
+            <div
+              key={experience.id}
+              className={`relative flex items-center mb-12 ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              }`}
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#44A54A] rounded-full border-4 border-[#F7F7F7] z-10"></div>
+
+              {/* Content */}
+              <div className={`flex-1 ml-16 md:ml-0 ${
+                index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+              }`}>
+                <div
+                  className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                    <h3 className="text-xl font-semibold text-[#1C1C1C]">
+                      {experience.title}
+                    </h3>
+                    <div className="flex items-center text-sm text-[#44A54A] mt-1 sm:mt-0">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {experience.period}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center text-[#44A54A] mb-3">
+                    <span className="mr-3 font-medium">{experience.company}</span>
+                    <div className="flex items-center text-sm text-[#505050]">
+                      <MapPin className="w-4 h-4 mr-1" />
+                      {experience.location}
+                    </div>
+                  </div>
+
+                  <p className="text-[#505050] mb-4 leading-relaxed">
+                    {experience.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    {experience.achievements.map((achievement, achievementIndex) => (
+                      <div
+                        key={achievementIndex}
+                        className="flex items-start"
+                      >
+                        <div className="w-2 h-2 bg-[#44A54A] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-sm text-[#505050]">{achievement}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-
-              <h3 className="relative z-50 mb-4 text-2xl font-bold text-white">
-                {step.title}
-              </h3>
-
-              <p className="relative z-50 mb-4 text-base font-normal text-neutral-400 leading-relaxed">
-                {step.description}
-              </p>
-
-              {/* Meteors effect */}
-              <Meteors number={15} />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
