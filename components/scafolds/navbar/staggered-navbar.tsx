@@ -1,19 +1,8 @@
-// NOTE: Original navbar implementation has been commented out for review and potential rollback.
-// import { useState } from 'react';
-// import { motion, AnimatePresence } from 'framer-motion';
-// const navLinks = [
-//   { name: 'Home', href: '#home' },
-//   { name: 'About', href: '#about' },
-//   { name: 'Work', href: '#work' },
-//   { name: 'Process', href: '#process' },
-//   { name: 'Contact', href: '#contact' },
-// ];
-// const Navbar = () => { /* ...previous navbar code... */ };
-// export default Navbar;
+// Scaffold: Navbar using StaggeredMenu
+'use client';
+import StaggeredMenu from '@/components/ui/StaggeredMenu';
 
-import StaggeredMenu from './StaggeredMenu';
-
-export const Navbar = () => {
+const StaggeredMenuNavbar = () => {
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/#about' },
@@ -29,28 +18,19 @@ export const Navbar = () => {
   ];
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        background: 'transparent',
-      }}
-    >
+    <div style={{ height: '100vh', background: '#1a1a1a' }}>
       <StaggeredMenu
         position="right"
         items={menuItems}
         socialItems={socialItems}
         displaySocials={true}
         displayItemNumbering={true}
-        menuButtonColor="#1c1c1c"
-        openMenuButtonColor="#1c1c1c"
+        menuButtonColor="#fff"
+        openMenuButtonColor="#fff"
         changeMenuColorOnOpen={true}
-        colors={['#D6E7D7', '#44A54A']}
+        colors={['#B19EEF', '#5227FF']}
         logoUrl="/images/logo.svg"
-        accentColor="#44A54A"
+        accentColor="#ff6b6b"
         onMenuOpen={() => console.log('Menu opened')}
         onMenuClose={() => console.log('Menu closed')}
         isFixed={true}
@@ -59,4 +39,4 @@ export const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default StaggeredMenuNavbar;

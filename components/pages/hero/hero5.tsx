@@ -7,6 +7,7 @@ const Hero5 = () => {
       {/* Keeping this placeholder div in case it's used for future effects */}
       {/* <div className="absolute top-0 left-0 w-full"></div> */}
 
+
       {/* Image - appears first on mobile, second on desktop */}
       <div className="rounded-xl overflow-hidden w-full aspect-square sm:w-[20rem] sm:h-[20rem] md:w-[28rem] md:h-[28rem] flex-shrink-0 order-1 md:order-2">
         <Image

@@ -1,6 +1,6 @@
 'use client';
 import type React from 'react';
-import Navbar from '@/components/ui/navbar'; // New navbar
+import ScrollNavbar from '@/components/ui/scroll-navbar'; // Scroll-based navbar
 import About from '@/components/pages/About';
 import Work from '@/components/pages/Work';
 import Process from '@/components/pages/Process';
@@ -57,9 +57,9 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen w-full bg-[#F7F7F7] relative antialiased overflow-x-hidden">
-      <Navbar />
+      <ScrollNavbar />
 
-      <div className="pt-20">
+      <div className="pt-4">
         <Hero5 />
       </div>
       <About
