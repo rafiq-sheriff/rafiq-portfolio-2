@@ -204,8 +204,8 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className=" flex items-center justify-center">
+            <form onSubmit={handleSubmit} className="space-y-6 w-full">
               <div className="space-y-4">
                 <div className="relative">
                   <input
@@ -214,7 +214,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 bg-white border border-[#E5E7EB] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#44A54A]/20 focus:border-[#44A54A] transition-all duration-200 text-[#1C1C1C] text-base"
+                    className="w-full px-4 py-3 bg-white border border-[#E5E7EB] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#44A54A]/20 focus:border-[#44A54A] transition-all duration-200 text-[#1C1C1C] text-base"
                     required
                   />
                 </div>
@@ -226,7 +226,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Your Email"
-                    className="w-full px-4 py-3 bg-white border border-[#E5E7EB] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#44A54A]/20 focus:border-[#44A54A] transition-all duration-200 text-[#1C1C1C] text-base"
+                    className="w-full px-4 py-3 bg-white border border-[#E5E7EB] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#44A54A]/20 focus:border-[#44A54A] transition-all duration-200 text-[#1C1C1C] text-base"
                     required
                   />
                 </div>
@@ -238,7 +238,7 @@ export default function ContactSection() {
                     onChange={handleInputChange}
                     placeholder="Your Message"
                     rows={6}
-                    className="w-full px-4 py-3 bg-white border border-[#E5E7EB] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#44A54A]/20 focus:border-[#44A54A] transition-all duration-200 resize-none text-[#1C1C1C] text-base"
+                    className="w-full px-4 py-3 bg-white border border-[#E5E7EB] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#44A54A]/20 focus:border-[#44A54A] transition-all duration-200 resize-none text-[#1C1C1C] text-base"
                     required
                   />
                 </div>
@@ -246,7 +246,7 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="w-full bg-[#44A54A] text-white px-6 py-3 rounded-xl hover:bg-[#38843C] transition-colors duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl text-base font-semibold"
+                className="w-full bg-[#44A54A] text-white px-6 py-3 rounded-lg hover:bg-[#38843C] transition-colors duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl text-base font-semibold"
               >
                 <Send className="w-4 h-4" />
                 <span>Send Message</span>

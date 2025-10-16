@@ -7,6 +7,7 @@ import Process from '@/components/pages/Process';
 import Contact from '@/components/pages/Contact';
 import Footer from '@/components/pages/Footer';
 import Hero5 from '@/components/pages/hero/hero5';
+import Contact2 from '@/components/pages/contact2';
 
 export default function Portfolio() {
   const designSkills = [
@@ -70,7 +71,7 @@ export default function Portfolio() {
       <Work />
       <Process />
       <Contact />
-
+      <Contact2 />
       <Footer />
     </div>
   );

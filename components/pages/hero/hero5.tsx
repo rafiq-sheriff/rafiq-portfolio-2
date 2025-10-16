@@ -3,7 +3,7 @@ import PortfolioNavbar from '@/components/ui/portfolio-navbar';
 
 const Hero5 = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-between bg-[#F7F7F7] px-4 sm:px-8 md:px-20 py-12 md:py-20 gap-10">
+    <div className="flex flex-col md:flex-row items-center md:items-center justify-between bg-[#F7F7F7] px-4 sm:px-8 md:px-20 py-12 md:py-20 gap-10">
       {/* Keeping this placeholder div in case it's used for future effects */}
       {/* <div className="absolute top-0 left-0 w-full"></div> */}
 
@@ -25,18 +25,18 @@ const Hero5 = () => {
       <div className="flex flex-col gap-6 w-full md:w-1/2 max-w-xl order-2 md:order-1">
         <div className="bg-[#E5EFE6] w-fit px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
           <p className="text-sm sm:text-base text-[#44A54A] font-semibold">
-            UI/UX & Frontend Designer
+            UI/UX & Frontend Engineer
           </p>
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-semibold font-sans">
           {' '}
-          <span className="text-[#1C1C1C]">Hi, I'm</span>{' '}
+          <span className="text-[#1b1b1b]">Hi, I'm</span>{' '}
           <span className="text-[#44A54A]">Rafiq Sheriff S</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-xl font-semibold font-sans text-[#505050]">
+        <p className="text-base sm:text-lg md:text-xl font-semibold font-sans text-[#465753]">
           A Visual Designer and Web Developer Crafting Digital Stories
         </p>
-        <p className="text-base sm:text-lg md:text-xl font-sans text-[#505050]">
+        <p className="text-base sm:text-lg md:text-xl font-sans text-[#465753]">
           I'm a multidisciplinary creative, specializing in UX/UI Design, Web
           Development, Branding, Logo Design, Photography, and Video Editing.
         </p>

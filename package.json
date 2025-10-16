@@ -20,6 +20,7 @@
     "framer-motion": "^10.16.4",
     "gsap": "^3.13.0",
     "lucide-react": "^0.294.0",
+    "matter-js": "^0.20.0",
     "meshline": "^3.3.1",
     "next": "14.0.0",
     "ogl": "^1.0.11",
@@ -29,6 +30,7 @@
     "three": "^0.180.0"
   },
   "devDependencies": {
+    "@types/matter-js": "^0.20.2",
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",

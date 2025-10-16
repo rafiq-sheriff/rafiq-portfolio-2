@@ -9,15 +9,28 @@ const Work = () => {
       </h2>
       <div className="flex flex-col gap-5">
         <div className="flex flex-row gap-5">
-          <div className="bg-[#44A54A] w-1/2 h-[50rem] rounded-xl relative">
-            <div className="absolute top-8 left-8">
+          <div className="w-1/2 h-[50rem] rounded-xl relative overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source
+                src="/videos/app-design/mobile-app.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute top-8 left-8 z-10">
               <h1 className="text-white text-3xl md:text-6xl font-bold">
                 <span className="text-white">Mobile App</span>
                 <br />
                 <span className="text-white/50">Design</span>
               </h1>
             </div>
-            <div className="absolute bottom-8 left-8">
+            <div className="absolute bottom-8 left-8 z-10">
               <p className="text-white text-sm md:text-base">
                 User Interface, Design
               </p>
@@ -63,15 +76,28 @@ const Work = () => {
           </div>
         </div>
         <div className="flex flex-row gap-5">
-          <div className="bg-[#44A54A] w-1/2 h-[50rem] rounded-xl relative">
-            <div className="absolute top-8 left-8">
+          <div className="w-1/2 h-[50rem] rounded-xl relative overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source
+                src="/videos/graphic-design/graphic-design.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute top-8 left-8 z-10">
               <h1 className="text-white text-3xl md:text-6xl font-bold">
                 <span className="text-white">Social Media</span>
                 <br />
                 <span className="text-white/50">& Graphic Design</span>
               </h1>
             </div>
-            <div className="absolute bottom-8 left-8">
+            <div className="absolute bottom-8 left-8 z-10">
               <p className="text-white text-sm md:text-base">iOS, Android</p>
             </div>
           </div>
@@ -83,8 +109,9 @@ const Work = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
+              {/* Previously used: /videos/photography/lv_0_20251011130311.mp4 */}
               <source
-                src="/videos/photography/lv_0_20251011130311.mp4"
+                src="/videos/photography/Photograpgy.mp4"
                 type="video/mp4"
               />
             </video>
