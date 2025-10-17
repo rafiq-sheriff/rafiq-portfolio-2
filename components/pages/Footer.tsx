@@ -21,7 +21,13 @@ const footer = () => {
   };
 
   return (
-    <div className="bg-[#44A54A] px-8 md:px-16 2xl:px-24 py-8 overflow-hidden h-[10.5rem] md:h-[18rem] lg:h-[17rem] xl:h-[20rem] 2xl:h-[24rem]">
+    <div
+      className="px-8 md:px-16 2xl:px-24 py-8 overflow-hidden h-[10.5rem] md:h-[18rem] lg:h-[17rem] xl:h-[20rem] 2xl:h-[24rem]"
+      style={{
+        backgroundImage:
+          'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+      }}
+    >
       {/* Top section with copyright and social links */}
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-8">
         {/* Copyright text */}

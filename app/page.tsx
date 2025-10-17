@@ -8,6 +8,7 @@ import Contact from '@/components/pages/Contact';
 import Footer from '@/components/pages/Footer';
 import Hero5 from '@/components/pages/hero/hero5';
 import Contact2 from '@/components/pages/contact2';
+import Hero from '@/components/pages/hero/hero';
 
 export default function Portfolio() {
   const designSkills = [
@@ -58,16 +59,19 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen w-full bg-[#F7F7F7] relative antialiased overflow-x-hidden">
-      <ScrollNavbar />
+      {/* <ScrollNavbar /> */}
 
-      <div className="pt-4">
-        <Hero5 />
+      <div className="">
+        {/* <Hero5 /> */}
+        <Hero />
+
       </div>
       <About
         designSkills={designSkills}
         developmentSkills={developmentSkills}
         otherSkills={otherSkills}
       />
+
       <Work />
       <Process />
       <Contact />

@@ -79,6 +79,72 @@
   }
 }
 
+/* Figma Glass Button - Frame 39023 */
+.figma-glass-button {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 60px;
+  gap: 10px;
+
+  margin: 0 auto;
+  width: 258px;
+  height: 55px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 43px;
+  border: none;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  /* Text styles */
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #F5EFF7;
+
+  /* Cursor */
+  cursor: pointer;
+
+  /* Transition for smooth interactions */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.figma-glass-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Active effect */
+.figma-glass-button:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Aboreto Font */
+.aboreto-regular {
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Bricolage Grotesque Font */
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 /* LiquidEther styles */
 .liquid-ether-container {
   position: relative;

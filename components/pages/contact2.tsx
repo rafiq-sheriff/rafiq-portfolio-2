@@ -32,7 +32,12 @@ const Contact2 = () => {
         </div>
 
         {/* Right Panel - Social Media Buttons */}
-        <div className="bg-teal-500 rounded-3xl p-12 flex-1 flex items-center justify-center relative overflow-hidden">
+        <div
+          className="rounded-3xl p-12 flex-1 flex items-center justify-center relative overflow-hidden"
+          style={{
+            backgroundImage: 'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+          }}
+        >
           {/* Clustered Button Layout */}
           <div className="relative w-full h-full flex items-center justify-center">
             {/* FOLLOW ME! - Top center */}

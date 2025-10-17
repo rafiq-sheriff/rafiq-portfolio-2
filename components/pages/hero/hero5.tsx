@@ -7,7 +7,6 @@ const Hero5 = () => {
       {/* Keeping this placeholder div in case it's used for future effects */}
       {/* <div className="absolute top-0 left-0 w-full"></div> */}
 
-
       {/* Image - appears first on mobile, second on desktop */}
       <div className="rounded-xl overflow-hidden w-full aspect-square sm:w-[20rem] sm:h-[20rem] md:w-[28rem] md:h-[28rem] flex-shrink-0 order-1 md:order-2">
         <Image
@@ -44,7 +43,14 @@ const Hero5 = () => {
           <button className="bg-[#44A54A] text-sm font-semibold font-sans text-white px-6 py-3 sm:py-4 rounded-[10px] w-full sm:w-auto">
             View My Work
           </button>
-          <button className=" text-sm font-semibold font-sans text-[#44A54A] border border-[#44A54A] px-6 py-3 sm:py-4 rounded-[10px] w-full sm:w-auto">
+          <button
+            className="font-semibold font-sans text-[#44A54A] border border-[#44A54A] rounded-[10px] w-full sm:w-auto"
+            style={{
+              width: '12rem',
+              height: '3rem',
+              fontSize: '1rem',
+            }}
+          >
             Download CV
           </button>
         </div>

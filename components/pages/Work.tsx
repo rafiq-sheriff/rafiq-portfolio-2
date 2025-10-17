@@ -3,13 +3,21 @@
 
 const Work = () => {
   return (
-    <div id="work" className="py-20 px-8  bg-[#F7F7F7]">
-      <h2 className="text-3xl md:text-5xl text-[#1C1C1C] font-bold text-center mb-16">
+   <div className="bg-[#ffffff] p-3">
+     <div
+      id="work"
+      className="py-8 px-8 rounded-3xl "
+      style={{
+        backgroundImage:
+          'linear-gradient(to bottom, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+      }}
+    >
+      <h2 className="text-3xl md:text-5xl text-[#ffffff] font-bold text-center mb-16 bricolage-grotesque">
         Featured Projects
       </h2>
-      <div className="flex flex-col gap-5">
-        <div className="flex flex-row gap-5">
-          <div className="w-1/2 h-[50rem] rounded-xl relative overflow-hidden">
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-row gap-8">
+          <div className="w-1/2 h-[37.5rem] rounded-xl relative overflow-hidden">
             <video
               autoPlay
               loop
@@ -24,7 +32,7 @@ const Work = () => {
             </video>
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="absolute top-8 left-8 z-10">
-              <h1 className="text-white text-3xl md:text-6xl font-bold">
+              <h1 className="text-white text-3xl md:text-4xl font-bold">
                 <span className="text-white">Mobile App</span>
                 <br />
                 <span className="text-white/50">Design</span>
@@ -36,9 +44,10 @@ const Work = () => {
               </p>
             </div>
           </div>
-          <div className="bg-[#44A54A] w-1/2 h-[50rem] rounded-xl relative">
+
+          <div className="bg-[#44A54A] w-1/2 h-[37.5rem] rounded-xl relative">
             <div className="absolute top-8 left-8">
-              <h1 className="text-white text-3xl md:text-6xl font-bold">
+              <h1 className="text-white text-3xl md:text-4xl font-bold">
                 <span className="text-white">Logo</span>
                 <br />
                 <span className="text-white/50">Design & Branding</span>
@@ -51,7 +60,7 @@ const Work = () => {
             </div>
           </div>
         </div>
-        <div className="w-full h-[50rem] rounded-xl relative overflow-hidden">
+        <div className="w-full h-[37.5rem] rounded-xl relative overflow-hidden">
           <video
             autoPlay
             loop
@@ -63,7 +72,7 @@ const Work = () => {
           </video>
           <div className="absolute inset-0 bg-black/30"></div>
           <div className="absolute top-8 left-8 z-10">
-            <h1 className="text-white text-4xl md:text-6xl font-bold">
+            <h1 className="text-white text-4xl md:text-4xl font-bold">
               <span className="text-white">Web</span>
               <br />
               <span className="text-white/50">Design & Development</span>
@@ -75,8 +84,8 @@ const Work = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row gap-5">
-          <div className="w-1/2 h-[50rem] rounded-xl relative overflow-hidden">
+        <div className="flex flex-row gap-8">
+          <div className="w-1/2 h-[37.5rem] rounded-xl relative overflow-hidden">
             <video
               autoPlay
               loop
@@ -91,7 +100,7 @@ const Work = () => {
             </video>
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="absolute top-8 left-8 z-10">
-              <h1 className="text-white text-3xl md:text-6xl font-bold">
+              <h1 className="text-white text-3xl md:text-4xl font-bold">
                 <span className="text-white">Social Media</span>
                 <br />
                 <span className="text-white/50">& Graphic Design</span>
@@ -101,7 +110,7 @@ const Work = () => {
               <p className="text-white text-sm md:text-base">iOS, Android</p>
             </div>
           </div>
-          <div className="w-1/2 h-[50rem] rounded-xl relative overflow-hidden">
+          <div className="w-1/2 h-[37.5rem] rounded-xl relative overflow-hidden">
             <video
               autoPlay
               loop
@@ -117,7 +126,7 @@ const Work = () => {
             </video>
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="absolute top-8 left-8 z-10">
-              <h1 className="text-white text-3xl md:text-6xl font-bold">
+              <h1 className="text-white text-3xl md:text-4xl font-bold">
                 <span className="text-white">Mobile</span>
                 <br />
                 <span className="text-white/50">Photography</span>
@@ -131,12 +140,31 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-10">
-        <button className="bg-[#44A54A] text-white px-4 py-2 rounded-xl">
+      <div className="flex justify-center mt-8">
+        <button
+          className="glass-button"
+          style={{
+            width: '12rem',
+            height: '3rem',
+            margin: 0,
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: '43px',
+            backdropFilter: 'blur(16px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(16px) saturate(160%)',
+            color: '#F5EFF7',
+            fontFamily: 'Sora, sans-serif',
+            fontSize: '16px',
+            fontWeight: '400',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+          }}
+        >
           View All Projects
         </button>
       </div>
     </div>
+   </div>
   );
 };
 
