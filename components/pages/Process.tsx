@@ -4,7 +4,7 @@ const experiences = [
   {
     id: 1,
     title: "Frontend Engineer",
-    company: "AS CODELABS",
+    company: "A S CODELABS",
     location: "Chennai, Tamil Nadu",
     period: "MAR 2025 - Present",
     description: "I work as a Frontend Engineer, designing and developing modern, responsive, and user-friendly websites and applications. I combine creativity and clean code to bring ideas to life with efficient, scalable solutions.",
@@ -32,10 +32,10 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className="py-20 px-8 bg-[#FFFFFF]">
+    <section className=" pt-10 md:px-8 px-4 bg-[#FFFFFF]">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl text-[#1C1C1C] font-bold mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl text-[#1f1f1f] font-bold  bricolage-grotesque">
             Education & Experience
           </h2>
 
@@ -43,7 +43,8 @@ export default function ExperienceSection() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-0.5 w-0.5 h-full bg-[#D1D5DB]"></div>
+          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-0.5 w-0.5 h-full bg-[#3f3f3f]"></div>
+
 
           {experiences.map((experience, index) => (
             <div
@@ -52,35 +53,37 @@ export default function ExperienceSection() {
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#44A54A] rounded-full border-4 border-[#F7F7F7] z-10"></div>
+
 
               {/* Content */}
               <div className={`flex-1 ml-16 md:ml-0 ${
                 index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
               }`}>
                 <div
-                  className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
+                  className="md:p-6 p-4 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
+                  style={{
+                    backgroundImage: 'linear-gradient(to bottom, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)'
+                  }}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-[#1C1C1C]">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between md:mb-3 mb-5">
+                    <h3 className="md:text-3xl text-2xl font-semibold text-[#ffffff] bricolage-grotesque">
                       {experience.title}
                     </h3>
-                    <div className="flex items-center text-sm text-[#44A54A] mt-1 sm:mt-0">
+                    <div className="flex items-center text-sm text-[#ffffff] font-poppins md:mt-1 mt-2 sm:mt-0">
                       <Calendar className="w-4 h-4 mr-1" />
                       {experience.period}
                     </div>
                   </div>
 
-                  <div className="flex items-center text-[#44A54A] mb-3">
-                    <span className="mr-3 font-medium">{experience.company}</span>
-                    <div className="flex items-center text-sm text-[#505050]">
-                      <MapPin className="w-4 h-4 mr-1" />
+                  <div className="flex flex-col md:flex-row md:items-center items-start text-[#ffffff]  md:mb-4 mb-5">
+                    <span className="md:mr-3 mb-2 md:mb-0 font-medium font-poppins">{experience.company}</span>
+                    <div className="flex items-center text-sm text-[#ffffff]/50">
+                      <MapPin className="w-4 h-4 md:mr-1 mr-2" />
                       {experience.location}
                     </div>
                   </div>
 
-                  <p className="text-[#505050] mb-4 leading-relaxed">
+                  <p className="text-[#ffffff]/50 mb-4 leading-relaxed font-poppins">
                     {experience.description}
                   </p>
 
@@ -90,8 +93,8 @@ export default function ExperienceSection() {
                         key={achievementIndex}
                         className="flex items-start"
                       >
-                        <div className="w-2 h-2 bg-[#44A54A] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-sm text-[#505050]">{achievement}</span>
+                        <div className="w-2 h-2 bg-[#ffffff] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-sm text-[#ffffff]/50 font-poppins">{achievement}</span>
                       </div>
                     ))}
                   </div>

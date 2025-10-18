@@ -58,7 +58,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-[#F7F7F7] relative antialiased overflow-x-hidden">
+    <div className="min-h-screen w-full bg-[#000000] relative antialiased overflow-x-hidden">
       {/* <ScrollNavbar /> */}
 
       <div className="">
@@ -73,10 +73,12 @@ export default function Portfolio() {
       />
 
       <Work />
+      <div className="bg-[#ffffff] pb-12">
       <Process />
-      <Contact />
       <Contact2 />
+      </div>
       <Footer />
+
     </div>
   );
 }

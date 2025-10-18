@@ -26,15 +26,15 @@ export default function About({
 
   const progressStyle = (level: number) => ({
     width: `${level}%`,
-    backgroundImage: `linear-gradient(to right, #44A54A, #44A54A)`,
+    backgroundImage: `linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)`,
   });
 
   return (
-    <div id="about" className=" bg-[#ffffff] pt-12 pb-12">
+    <div id="about" className=" bg-[#ffffff] pt-8 px-8  pb-12">
       {/* Intro block matching hero look */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <div
-          className="flex flex-col gap-6 p-9 rounded-3xl mb-12"
+          className="flex flex-col gap-6 p-4 md:p-9 rounded-3xl mb-12"
           style={{
             backgroundImage:
               'linear-gradient(to bottom, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
@@ -60,47 +60,52 @@ export default function About({
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-[#505050]">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-6 text-[#505050]">
           <div
-            className="flex items-center px-4 py-2 rounded-full gap-2 text-sm md:text-base"
+            className="flex items-center px-4 py-2  md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
             style={{
-              backgroundImage: 'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+              backgroundImage:
+                'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
             }}
           >
             <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-            <span className="text-[#ffffff]/60">UI/UX Designer</span>
+            <span className="text-[#ffffff]/60">Frontend Engineer</span>
           </div>
           <div
-            className="flex items-center px-4 py-2 rounded-full gap-2 text-sm md:text-base"
+            className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
             style={{
-              backgroundImage: 'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+              backgroundImage:
+                'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
             }}
           >
             <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
             <span className="text-[#ffffff]/60">Web Developer</span>
           </div>
           <div
-            className="flex items-center px-4 py-2 rounded-full gap-2 text-sm md:text-base"
+            className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
             style={{
-              backgroundImage: 'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+              backgroundImage:
+                'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
             }}
           >
             <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-            <span className="text-[#ffffff]/60">Creative Technologist</span>
+            <span className="text-[#ffffff]/60">UI/UX Designer</span>
           </div>
           <div
-            className="flex items-center px-4 py-2 rounded-full gap-2 text-sm md:text-base"
+            className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
             style={{
-              backgroundImage: 'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+              backgroundImage:
+                'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
             }}
           >
             <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
             <span className="text-[#ffffff]/60">Logo Designer</span>
           </div>
           <div
-            className="flex items-center px-4 py-2 rounded-full gap-2 text-sm md:text-base"
+            className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
             style={{
-              backgroundImage: 'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+              backgroundImage:
+                'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
             }}
           >
             <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>

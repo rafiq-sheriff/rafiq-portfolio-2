@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import PortfolioNavbar from '@/components/ui/portfolio-navbar';
+import ShinyText from '@/components/effects/ShinyText';
 
 const Hero5 = () => {
   return (
@@ -44,14 +45,27 @@ const Hero5 = () => {
             View My Work
           </button>
           <button
-            className="font-semibold font-sans text-[#44A54A] border border-[#44A54A] rounded-[10px] w-full sm:w-auto"
+            className="px-8 py-4 w-full sm:w-auto text-white font-normal transition-all duration-300 hover:scale-105 bg-white/10 border border-white/20 flex items-center justify-center"
             style={{
               width: '12rem',
               height: '3rem',
-              fontSize: '1rem',
+              background:
+                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(5px) saturate(120%)',
+              WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+              borderRadius: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            Download CV
+            <ShinyText
+              text="Download CV"
+              disabled={false}
+              speed={2}
+              className="text-white font-sora text-base font-normal"
+            />
           </button>
         </div>
       </div>
