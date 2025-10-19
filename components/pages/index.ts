@@ -5,5 +5,8 @@ export { default as Footer } from './Footer';
 export { default as Process } from './Process';
 export { default as Work } from './Work';
 
+// Work Collection Components
+export { WorkCollection } from './work-collection';
+
 // Hero Components
 export { default as Hero5 } from './hero/hero5';

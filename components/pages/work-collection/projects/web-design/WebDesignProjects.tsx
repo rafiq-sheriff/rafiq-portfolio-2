@@ -1,0 +1,78 @@
+import { ProjectCardDetailed } from '@/components/ui';
+
+// Web Design Projects Data
+const webDesignProjects = [
+  {
+    id: 1,
+    title: 'A S CODELABS',
+    year: '2025',
+    image:
+      '/videos/work-collections/web-design-development/ascodelabs/A S CODELABS.mp4',
+    type: 'video' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
+    description: 'Connecting Markets, Delivering Quality',
+  },
+  {
+    id: 2,
+    title: 'BILLSHEET AI ',
+    year: '2025',
+    image:
+      '/videos/work-collections/web-design-development/billsheet-site/billsheet (1).mp4',
+    type: 'video' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
+    description: 'Modern portfolio with smooth animations',
+  },
+  {
+    id: 3,
+    title: 'A S UNIQUE HR',
+    year: '2025',
+    image:
+      '/videos/work-collections/web-design-development/asuniquehr/A S UNIQUE HR.mp4',
+    type: 'video' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
+    description: 'Professional corporate website',
+  },
+  {
+    id: 4,
+    title: 'A S UNIQUE TRADERS',
+    year: '2025',
+    image:
+      '/videos/work-collections/web-design-development/asuniquetraders/A S UNIQUE TRADERS.mp4',
+    type: 'video' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
+    description: 'Professional corporate website',
+  },
+  {
+    id: 5,
+    title: 'PERSONAL PORTFOLIO (old)',
+    year: '2025',
+    image:
+      '/videos/work-collections/web-design-development/portfolio/PORTFOLIO OLD .mp4',
+    type: 'video' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
+    description: 'Professional corporate website',
+  },
+];
+
+const WebDesignProjects = () => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
+      {webDesignProjects.map((project) => (
+        <ProjectCardDetailed
+          key={project.id}
+          title={project.title}
+          year={project.year}
+          tags={project.tags}
+          mediaType={project.type}
+          mediaSrc={project.image}
+          description={project.description}
+          onViewProject={() => console.log(`View ${project.title}`)}
+          onLiveDemo={() => console.log(`Live demo ${project.title}`)}
+          className="h-auto"
+        />
+      ))}
+    </div>
+  );
+};
+
+export default WebDesignProjects;

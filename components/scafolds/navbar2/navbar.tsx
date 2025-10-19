@@ -5,11 +5,11 @@ const Navbar = () => {
     <div className="flex items-center justify-between w-full">
       <h1 className="text-white text-2xl font-bold">Sherifiq Pixelhaus</h1>
       <div className="flex items-center gap-5">
-        <p>Home</p>
-        <p>About</p>
-        <p>Work</p>
-        <p>Experience</p>
-        <p>Contact</p>
+        <p className='text-white/50'>Home</p>
+        <p className='text-white/50'>About</p>
+        <p className='text-white/50'>Work</p>
+        <p className='text-white/50'>Experience</p>
+        <p className='text-white/50'>Contact</p>
       </div>
 
       <button

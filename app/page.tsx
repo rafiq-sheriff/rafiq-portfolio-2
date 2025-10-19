@@ -1,6 +1,5 @@
 'use client';
 import type React from 'react';
-import ScrollNavbar from '@/components/ui/scroll-navbar'; // Scroll-based navbar
 import About from '@/components/pages/About';
 import Work from '@/components/pages/Work';
 import Process from '@/components/pages/Process';
@@ -9,6 +8,7 @@ import Footer from '@/components/pages/Footer';
 import Hero5 from '@/components/pages/hero/hero5';
 import Contact2 from '@/components/pages/contact2';
 import Hero from '@/components/pages/hero/hero';
+import { ProjectCard, WorkCard } from '@/components/pages/card';
 
 export default function Portfolio() {
   const designSkills = [
@@ -59,12 +59,9 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen w-full bg-[#000000] relative antialiased overflow-x-hidden">
-      {/* <ScrollNavbar /> */}
-
       <div className="">
         {/* <Hero5 /> */}
         <Hero />
-
       </div>
       <About
         designSkills={designSkills}
@@ -74,11 +71,12 @@ export default function Portfolio() {
 
       <Work />
       <div className="bg-[#ffffff] pb-12">
-      <Process />
-      <Contact2 />
+        <Process />
+        <Contact2 />
+        
       </div>
-      <Footer />
 
+      <Footer />
     </div>
   );
 }

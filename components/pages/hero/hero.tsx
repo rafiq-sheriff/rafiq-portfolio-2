@@ -2,15 +2,25 @@ import Image from 'next/image';
 import Navbar from '@/components/scafolds/navbar2/navbar';
 import MobileNavbar from '@/components/scafolds/navbar2/mobile-navbar';
 import ShinyText from '@/components/effects/ShinyText';
-import BasicNavbar from '@/components/scafolds/navbar/basic-navbar';
 
 const Hero = () => {
   return (
-    <div className="p-3 bg-white h-full">
+    <div className="p-2 bg-white h-full">
       {/* Mobile Layout - Only visible on mobile screens */}
 
       <div className="md:hidden h-ful bg-[radial-gradient(circle_at_center,_#545454_0%,_#1E1E1E_100%)] relative overflow-hidden rounded-3xl p-3">
-        <MobileNavbar />
+        <div
+          className="relative mb-10 rounded-2xl px-4 py-3 z-20"
+          style={{
+            background:
+              'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            backdropFilter: 'blur(5px) saturate(120%)',
+            WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+          }}
+        >
+          <MobileNavbar />
+        </div>
         {/* Background Image - Behind content */}
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-center z-0">
           <Image
@@ -83,6 +93,7 @@ const Hero = () => {
               {/* View Projects Button - Bottom Center */}
               <div className="flex justify-center">
                 <button
+                  onClick={() => (window.location.href = '/work-collection')}
                   className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-105  bg-white/10 border border-white/20 "
                   style={{
                     background:
@@ -107,7 +118,7 @@ const Hero = () => {
       </div>
 
       {/* Desktop Layout - Hidden on mobile, visible on desktop */}
-      <div className="hidden md:block h-[37.5rem] bg-[radial-gradient(circle_at_center,_#545454_0%,_#1E1E1E_100%)] relative overflow-hidden rounded-3xl p-6">
+      <div className="hidden md:block h-[39rem] bg-[radial-gradient(circle_at_center,_#545454_0%,_#1E1E1E_100%)] relative overflow-hidden rounded-3xl p-6">
         {/* Background Image */}
         <div className="absolute inset-0 flex items-end justify-center z-0">
           <Image
@@ -123,8 +134,18 @@ const Hero = () => {
         {/* Main Container with consistent gaps */}
         <div className="relative z-10 h-full flex flex-col justify-between">
           {/* Navbar */}
-          <Navbar />
-
+          <div
+            className="p-2 rounded-3xl"
+            style={{
+              background:
+                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(5px) saturate(120%)',
+              WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+            }}
+          >
+            <Navbar />
+          </div>
           {/* Main Content Container */}
 
           {/* Top Section - Skill Tag and Description */}
@@ -180,6 +201,7 @@ const Hero = () => {
 
             {/* View Projects Button */}
             <button
+              onClick={() => (window.location.href = '/work-collection')}
               className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-white/10 border border-white/20  flex items-center justify-center"
               style={{
                 width: '12rem',

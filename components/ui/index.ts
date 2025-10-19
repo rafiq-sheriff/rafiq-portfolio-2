@@ -1,7 +1,9 @@
 // UI Components
 export { default as PortfolioNavbar } from './portfolio-navbar';
-export { Navbar } from './navbar';
-export { default as LegacyNavbar } from './navbar-legacy';
-export { default as ScrollNavbar } from './scroll-navbar';
-export { default as BasicNavbar } from '../scafolds/navbar/basic-navbar';
-export { default as StaggeredMenuNavbar } from '../scafolds/navbar/staggered-navbar';
+
+// Card Components
+export { default as ProjectCard } from './ProjectCard';
+export { default as ProjectCardDetailed } from './ProjectCardDetailed';
+export { default as WorkCard } from './WorkCard';
+export * from './types';
+export * from './card-styles';
