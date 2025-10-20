@@ -1,13 +1,14 @@
 'use client';
 import ShinyText from '@/components/effects/ShinyText';
 import { WorkCard } from '@/components/ui';
+import GlareHover from '@/components/effects/GlareHover';
 
 const Work = () => {
   return (
     <div className="bg-[#ffffff] p-3">
       <div
         id="work"
-        className="md:p-8 p-4 rounded-3xl "
+        className="md:p-8 p-4 rounded-3xl scroll-mt-20"
         style={{
           backgroundImage:
             'linear-gradient(to bottom, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
@@ -85,37 +86,52 @@ const Work = () => {
           />
         </div>
         <div className="flex justify-center mt-8">
-          <button
-            onClick={() => (window.location.href = '/work-collection')}
-            className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-white/10 border border-white/20 flex items-center justify-center"
+          <GlareHover
+            width="12rem"
+            height="3rem"
+            background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+            borderRadius="16px"
+            borderColor="rgba(255, 255, 255, 0.2)"
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
             style={{
-              width: '12rem',
-              height: '3rem',
-              margin: 0,
-              background:
-                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
               backdropFilter: 'blur(5px) saturate(120%)',
               WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-              borderRadius: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#F5EFF7',
-              fontFamily: 'Sora, sans-serif',
-              fontSize: '16px',
-              fontWeight: '400',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
             }}
+            onClick={() => (window.location.href = '/work-collection')}
           >
-            <ShinyText
-              text="View All Projects"
-              disabled={false}
-              speed={2}
-              className="text-white font-sora text-base font-normal"
-            />
-          </button>
+            <button
+              className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full"
+              style={{
+                width: '12rem',
+                height: '3rem',
+                margin: 0,
+                background: 'transparent',
+                border: 'none',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#F5EFF7',
+                fontFamily: 'Sora, sans-serif',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              <ShinyText
+                text="View All Projects"
+                disabled={false}
+                speed={2}
+                className="text-white font-sora text-base font-normal"
+              />
+            </button>
+          </GlareHover>
         </div>
       </div>
     </div>

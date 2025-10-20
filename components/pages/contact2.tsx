@@ -24,10 +24,10 @@ const Contact2 = () => {
           <button type="submit" className="w-full p-2  bg-white text-[#1f1f1f] rounded-full">Send</button>
         </form>
       </div> */}
-      <div className="flex md:flex-row flex-col gap-8 max-w-6xl h-full bg-white w-full">
+      <div className="flex lg:flex-row flex-col gap-8 max-w-6xl h-full bg-white w-full">
         {/* Left Panel - Contact Info */}
         <div className="bg-[#F7F7F7] rounded-3xl md:p-12 p-4  flex flex-col justify-center">
-          <h1 className="text-5xl md:text-5xl font-bold text-[#1f1f1f] mb-8 leading-tight bricolage-grotesque">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1f1f1f] mb-8 leading-tight bricolage-grotesque">
             Let's <br /> connect
             <br />
             and chat
@@ -59,16 +59,137 @@ const Contact2 = () => {
           }}
         >
           <div className="relative w-full h-full flex flex-col items-center justify-center">
-            {/* Button Container - Uses viewport units for consistent scaling */}
+            {/* Mobile absolute layout (matches requested structure) */}
             <div
-              className="relative flex items-center justify-center"
+              className="md:hidden relative flex items-center justify-center"
+              style={{
+                width: 'min(92vw, 380px)',
+                height: 'min(65vw, 230px)',
+                maxWidth: '380px',
+                maxHeight: '230px',
+              }}
+            >
+              {/* FOLLOW ME! - top center */}
+              <button
+                className="absolute flex items-center justify-center border-[1px] border-white text-white font-medium uppercase tracking-wide"
+                style={{
+                  top: '18%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'transparent',
+                  borderRadius: '50px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  zIndex: 10,
+                  padding: '12px 24px',
+                  fontSize: '14px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                FOLLOW ME!
+              </button>
+
+              {/* Emoji - top right of follow */}
+              <button
+                className="absolute flex items-center justify-center border-[1px] border-white text-white font-medium"
+                style={{
+                  top: '22.5%',
+                  left: '68%',
+                  transform: 'rotate(28deg)',
+                  background: 'transparent',
+                  borderRadius: '50px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  zIndex: 9,
+                  padding: '10px 20px',
+                  fontSize: '16px',
+                }}
+              >
+                👀🤩
+              </button>
+
+              {/* INSTAGRAM - mid left rotated */}
+              <button
+                className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
+                style={{
+                  top: '39%',
+                  left: '18%',
+                  transform: 'rotate(20deg)',
+                  borderRadius: '50px',
+                  cursor: 'pointer',
+                  transition: 'all 0.1s ease',
+                  zIndex: 8,
+                  padding: '12px 24px',
+                  fontSize: '14px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                INSTAGRAM
+              </button>
+
+              {/* DRIBBBLE - center right */}
+              <button
+                className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
+                style={{
+                  top: '44.7%',
+                  left: '53.8%',
+                  borderRadius: '50px',
+                  cursor: 'pointer',
+                  transition: 'all 0.1s ease',
+                  zIndex: 7,
+                  padding: '12px 24px',
+                  fontSize: '14px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                DRIBBBLE
+              </button>
+
+              {/* BEHANCE - bottom left */}
+              <button
+                className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
+                style={{
+                  bottom: '15%',
+                  left: '18.5%',
+                  borderRadius: '50px',
+                  cursor: 'pointer',
+                  transition: 'all 0.1s ease',
+                  zIndex: 6,
+                  padding: '12px 24px',
+                  fontSize: '14px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                BEHANCE
+              </button>
+
+              {/* LINKEDIN - bottom right */}
+              <button
+                className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
+                style={{
+                  bottom: '15%',
+                  right: '18.5%',
+                  borderRadius: '50px',
+                  cursor: 'pointer',
+                  transition: 'all 0.1s ease',
+                  zIndex: 5,
+                  padding: '12px 24px',
+                  fontSize: '14px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                LINKEDIN
+              </button>
+            </div>
+
+            {/* Desktop/tablet original layout (unchanged) */}
+            <div
+              className="hidden md:flex relative items-center justify-center"
               style={{
                 width: 'min(60vw, 500px)',
                 height: 'min(40vw, 300px)',
                 maxWidth: '500px',
                 maxHeight: '300px',
-                minWidth: '300px',
-                minHeight: '200px',
               }}
             >
               {/* FOLLOW ME! Button - Top Center */}
@@ -84,8 +205,8 @@ const Contact2 = () => {
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   zIndex: 10,
-                  padding: 'clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px)',
-                  fontSize: 'clamp(10px, 2vw, 14px)',
+                  padding: '12px 24px',
+                  fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -105,8 +226,8 @@ const Contact2 = () => {
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   zIndex: 9,
-                  padding: 'clamp(6px, 1.2vw, 10px) clamp(12px, 2.5vw, 20px)',
-                  fontSize: 'clamp(12px, 2.2vw, 16px)',
+                  padding: '10px 20px',
+                  fontSize: '16px',
                 }}
               >
                 👀🤩
@@ -124,8 +245,8 @@ const Contact2 = () => {
                   cursor: 'pointer',
                   transition: 'all 0.1s ease',
                   zIndex: 8,
-                  padding: 'clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px)',
-                  fontSize: 'clamp(10px, 2vw, 14px)',
+                  padding: '12px 24px',
+                  fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -143,8 +264,8 @@ const Contact2 = () => {
                   cursor: 'pointer',
                   transition: 'all 0.1s ease',
                   zIndex: 7,
-                  padding: 'clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px)',
-                  fontSize: 'clamp(10px, 2vw, 14px)',
+                  padding: '12px 24px',
+                  fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -161,8 +282,8 @@ const Contact2 = () => {
                   cursor: 'pointer',
                   transition: 'all 0.1s ease',
                   zIndex: 6,
-                  padding: 'clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px)',
-                  fontSize: 'clamp(10px, 2vw, 14px)',
+                  padding: '12px 24px',
+                  fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -179,8 +300,8 @@ const Contact2 = () => {
                   cursor: 'pointer',
                   transition: 'all 0.1s ease',
                   zIndex: 5,
-                  padding: 'clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px)',
-                  fontSize: 'clamp(10px, 2vw, 14px)',
+                  padding: '12px 24px',
+                  fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
               >

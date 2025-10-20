@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import PortfolioNavbar from '@/components/ui/portfolio-navbar';
 import ShinyText from '@/components/effects/ShinyText';
+import GlareHover from '@/components/effects/GlareHover';
 
 const Hero5 = () => {
   return (
@@ -44,29 +45,44 @@ const Hero5 = () => {
           <button className="bg-[#44A54A] text-sm font-semibold font-sans text-white px-6 py-3 sm:py-4 rounded-[10px] w-full sm:w-auto">
             View My Work
           </button>
-          <button
-            className="px-8 py-4 w-full sm:w-auto text-white font-normal transition-all duration-300 hover:scale-105 bg-white/10 border border-white/20 flex items-center justify-center"
+          <GlareHover
+            width="12rem"
+            height="3rem"
+            background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+            borderRadius="16px"
+            borderColor="rgba(255, 255, 255, 0.2)"
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
             style={{
-              width: '12rem',
-              height: '3rem',
-              background:
-                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
               backdropFilter: 'blur(5px) saturate(120%)',
               WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-              borderRadius: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
             }}
           >
-            <ShinyText
-              text="Download CV"
-              disabled={false}
-              speed={2}
-              className="text-white font-sora text-base font-normal"
-            />
-          </button>
+            <button
+              className="px-8 py-4 w-full sm:w-auto text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center"
+              style={{
+                width: '12rem',
+                height: '3rem',
+                background: 'transparent',
+                border: 'none',
+                borderRadius: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <ShinyText
+                text="Download CV"
+                disabled={false}
+                speed={2}
+                className="text-white font-sora text-base font-normal"
+              />
+            </button>
+          </GlareHover>
         </div>
       </div>
     </div>

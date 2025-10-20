@@ -1,10 +1,25 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import ShinyText from '@/components/effects/ShinyText';
 
 const BackButton = () => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    // Check if there's history to go back to
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      // If no history, navigate to home page
+      router.push('/');
+    }
+  };
+
   return (
     <div className="flex justify-start mb-8">
       <button
-        onClick={() => window.history.back()}
+        onClick={handleBack}
         className="flex items-center gap-2 px-4 py-2 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-white/10 border border-white/20"
         style={{
           background:

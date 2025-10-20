@@ -1,6 +1,6 @@
 import ShinyText from '@/components/effects/ShinyText';
-import Navbar from '@/components/scafolds/navbar2/navbar';
-import MobileNavbar from '@/components/scafolds/navbar2/mobile-navbar';
+import Navbar from '@/components/navigation/navbar';
+import MobileNavbar from '@/components/navigation/mobile-navbar';
 
 const WorkCollectionNavbar = () => {
   return (

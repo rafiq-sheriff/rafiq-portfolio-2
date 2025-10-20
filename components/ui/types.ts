@@ -9,6 +9,9 @@ export interface ProjectCardProps {
   onViewProject?: () => void;
   onLiveDemo?: () => void;
   className?: string;
+  hideButtons?: boolean;
+  removeTagMargin?: boolean;
+  compactLayout?: boolean;
 }
 
 export interface CardStyleProps {

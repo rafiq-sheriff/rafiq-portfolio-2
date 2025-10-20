@@ -1,60 +1,84 @@
-import VisualContentContainer from '../../VisualContentContainer';
-import TextInfoContainer from '../../TextInfoContainer';
+import { ProjectCardDetailed } from '@/components/ui';
 
 // Graphic Design Projects Data
 const graphicDesignProjects = [
   {
     id: 7,
-    title: 'Social Media Campaign',
-    year: '2024',
+    title: 'F1 Ferrari poster',
+    year: '2025',
     image: '/videos/graphic-design/graphic-design.mp4',
     type: 'video' as const,
-    tags: ['GRAPHIC DESIGN', 'SOCIAL MEDIA', 'MARKETING'],
+    tags: ['Poster Design', 'F1 Ferrari', 'Graphic Design'],
+
   },
   {
     id: 8,
-    title: 'Print Design',
-    year: '2023',
+    title: 'New Year Poster - AMN Builders',
+    year: '2025',
     image: '/videos/graphic-design/graphic-design.mp4',
     type: 'video' as const,
-    tags: ['GRAPHIC DESIGN', 'PRINT', 'BRANDING'],
+    tags: ['Graphic Design', 'New Year Poster', 'AMN Builders'],
+
   },
   {
     id: 9,
-    title: 'Brand Identity',
-    year: '2024',
+    title: 'New Year Poster - AMN Builders',
+    year: '2025',
     image: '/videos/graphic-design/graphic-design.mp4',
     type: 'video' as const,
-    tags: ['GRAPHIC DESIGN', 'BRANDING', 'IDENTITY'],
+    tags: ['Graphic Design', 'New Year Poster', 'AMN Builders'],
+
+  },
+
+  {
+    id: 10,
+    title: 'A S CODELABS - Business Card',
+    year: '2025',
+    image: '/videos/graphic-design/graphic-design.mp4',
+    type: 'video' as const,
+    tags: ['Graphic Design', 'Business Card', 'A S CODELABS'],
+
+  },
+
+  {
+    id: 11,
+    title: 'Vontwerp - Business Card',
+    year: '2025',
+    image: '/videos/graphic-design/graphic-design.mp4',
+    type: 'video' as const,
+    tags: ['Graphic Design', 'New Year Poster', 'Vontwerp'],
+
+  },
+  {
+    id: 12,
+    title: 'Vontwerp - Christmas Poster',
+    year: '2025',
+    image: '/videos/graphic-design/graphic-design.mp4',
+    type: 'video' as const,
+    tags: ['Graphic Design', 'Christmas Poster', 'Vontwerp'],
+
   },
 ];
 
 const GraphicDesignProjects = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
       {graphicDesignProjects.map((project) => (
-        <div
+        <ProjectCardDetailed
           key={project.id}
-          className="group relative overflow-hidden rounded-xl bg-white/5 border p-4 border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
-          style={{ height: '400px' }}
-        >
-          {/* Combined Container - Visual Content + Text Info */}
-          <div className="h-full flex flex-col">
-            {/* Visual Content Container */}
-            <VisualContentContainer
-              image={project.image}
-              type={project.type}
-              title={project.title}
-            />
+          title={project.title}
+          year={project.year}
+          tags={project.tags}
+          mediaType={project.type}
+          mediaSrc={project.image}
 
-            {/* Text Information Container */}
-            <TextInfoContainer
-              title={project.title}
-              year={project.year}
-              tags={project.tags}
-            />
-          </div>
-        </div>
+          onViewProject={() => console.log(`View ${project.title}`)}
+          onLiveDemo={() => console.log(`Live demo ${project.title}`)}
+          className="h-auto"
+          hideButtons={true}
+          removeTagMargin={true}
+          compactLayout={true}
+        />
       ))}
     </div>
   );

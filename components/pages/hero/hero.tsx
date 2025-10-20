@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import Navbar from '@/components/scafolds/navbar2/navbar';
-import MobileNavbar from '@/components/scafolds/navbar2/mobile-navbar';
+import Navbar from '@/components/navigation/navbar';
+import MobileNavbar from '@/components/navigation/mobile-navbar';
 import ShinyText from '@/components/effects/ShinyText';
+import GlareHover from '@/components/effects/GlareHover';
 
 const Hero = () => {
   return (
@@ -92,25 +93,64 @@ const Hero = () => {
 
               {/* View Projects Button - Bottom Center */}
               <div className="flex justify-center">
-                <button
-                  onClick={() => (window.location.href = '/work-collection')}
-                  className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-105  bg-white/10 border border-white/20 "
-                  style={{
-                    background:
-                      'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    backdropFilter: 'blur(5px) saturate(120%)',
-                    WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-                    borderRadius: '16px',
+                <GlareHover
+                  width="100%"
+                  height="60px"
+                  background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+                  borderRadius="16px"
+                  borderColor="rgba(255, 255, 255, 0.2)"
+                  glareColor="#ffffff"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                  className="w-full"
+                  onClick={() => {
+                    // Use a more reliable approach with multiple attempts
+                    const scrollToWork = () => {
+                      const workSection = document.getElementById('work');
+                      if (workSection) {
+                        workSection.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'start',
+                        });
+                        return true;
+                      }
+                      return false;
+                    };
+
+                    // Try immediately
+                    if (!scrollToWork()) {
+                      // If not found, try again after a short delay
+                      setTimeout(() => {
+                        if (!scrollToWork()) {
+                          // Final fallback: scroll down by viewport height
+                          window.scrollTo({
+                            top: window.scrollY + window.innerHeight,
+                            behavior: 'smooth',
+                          });
+                        }
+                      }, 200);
+                    }
                   }}
                 >
-                  <ShinyText
-                    text="View Projects"
-                    disabled={false}
-                    speed={2}
-                    className="text-white font-sora text-xl font-normal"
-                  />
-                </button>
+                  <button
+                    className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none"
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      borderRadius: '16px',
+                    }}
+                  >
+                    <ShinyText
+                      text="View Projects"
+                      disabled={false}
+                      speed={2}
+                      className="text-white font-sora text-xl font-normal"
+                    />
+                  </button>
+                </GlareHover>
               </div>
             </div>
           </div>
@@ -200,37 +240,79 @@ const Hero = () => {
             </div>
 
             {/* View Projects Button */}
-            <button
-              onClick={() => (window.location.href = '/work-collection')}
-              className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-white/10 border border-white/20  flex items-center justify-center"
+            <GlareHover
+              width="12rem"
+              height="3rem"
+              background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+              borderRadius="16px"
+              borderColor="rgba(255, 255, 255, 0.2)"
+              glareColor="#ffffff"
+              glareOpacity={0.3}
+              glareAngle={-30}
+              glareSize={300}
+              transitionDuration={800}
+              playOnce={false}
               style={{
-                width: '12rem',
-                height: '3rem',
-                margin: 0,
-                background:
-                  'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
                 backdropFilter: 'blur(5px) saturate(120%)',
                 WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-                borderRadius: '16px',
-                color: '#F5EFF7',
-                fontFamily: 'Sora, sans-serif',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+              }}
+              onClick={() => {
+                // Use a more reliable approach with multiple attempts
+                const scrollToWork = () => {
+                  const workSection = document.getElementById('work');
+                  if (workSection) {
+                    workSection.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                    });
+                    return true;
+                  }
+                  return false;
+                };
+
+                // Try immediately
+                if (!scrollToWork()) {
+                  // If not found, try again after a short delay
+                  setTimeout(() => {
+                    if (!scrollToWork()) {
+                      // Final fallback: scroll down by viewport height
+                      window.scrollTo({
+                        top: window.scrollY + window.innerHeight,
+                        behavior: 'smooth',
+                      });
+                    }
+                  }, 200);
+                }
               }}
             >
-              <ShinyText
-                text="View Projects"
-                disabled={false}
-                speed={3}
-                className="text-white font-sora text-base font-normal"
-              />
-            </button>
+              <button
+                className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center"
+                style={{
+                  width: '12rem',
+                  height: '3rem',
+                  margin: 0,
+                  background: 'transparent',
+                  border: 'none',
+                  borderRadius: '16px',
+                  color: '#F5EFF7',
+                  fontFamily: 'Sora, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: '400',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <ShinyText
+                  text="View Projects"
+                  disabled={false}
+                  speed={3}
+                  className="text-white font-sora text-base font-normal"
+                />
+              </button>
+            </GlareHover>
           </div>
         </div>
       </div>

@@ -16,6 +16,9 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
   onViewProject,
   onLiveDemo,
   className = '',
+  hideButtons = false,
+  removeTagMargin = false,
+  compactLayout = false,
 }) => {
   const renderMediaContent = () => {
     if (mediaType === 'video' && mediaSrc) {
@@ -53,7 +56,9 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className="rounded-3xl p-4 md:w-[400px] w-full h-[500px] flex flex-col"
+      className={`rounded-3xl p-4 md:w-[400px] w-full flex flex-col ${
+        compactLayout ? 'h-auto' : 'h-[500px]'
+      }`}
       style={cardStyles.cardContainer}
     >
       {/* Top Content Area - Large media container (60-70% of card height) */}
@@ -74,7 +79,7 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Tags Section */}
-      <div className="flex gap-2 mb-6 flex-wrap">
+      <div className={`flex gap-2 flex-wrap ${!removeTagMargin ? 'mb-6' : ''}`}>
         {tags.map((tag, index) => (
           <div
             key={index}
@@ -87,20 +92,22 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Buttons Section */}
-      <div className="flex gap-3 lg:flex-col md:flex-row flex-col">
-        <button
-          className="text-white px-6 py-3 rounded-[1rem] flex-1 font-medium hover:bg-[#2a2a2a] transition-colors text-lg"
-          style={cardStyles.button}
-          onClick={onViewProject}
-        >
-          <ShinyText
-            text="View Project"
-            disabled={false}
-            speed={2}
-            className="text-white font-medium"
-          />
-        </button>
-      </div>
+      {!hideButtons && (
+        <div className="flex gap-3 lg:flex-col md:flex-row flex-col">
+          <button
+            className="text-white px-6 py-3 rounded-[1rem] flex-1 font-medium hover:bg-[#2a2a2a] transition-colors text-lg"
+            style={cardStyles.button}
+            onClick={onViewProject}
+          >
+            <ShinyText
+              text="View Project"
+              disabled={false}
+              speed={2}
+              className="text-white font-medium"
+            />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
