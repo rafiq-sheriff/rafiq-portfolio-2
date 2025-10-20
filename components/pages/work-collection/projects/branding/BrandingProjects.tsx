@@ -1,60 +1,43 @@
-import VisualContentContainer from '../../VisualContentContainer';
-import TextInfoContainer from '../../TextInfoContainer';
+import { ProjectCardDetailed } from '@/components/ui';
 
 // Branding Projects Data
 const brandingProjects = [
   {
     id: 13,
-    title: 'Logo Design',
-    year: '2024',
-    image: '/images/logo.svg',
+    title: 'A S CODELABS LOGO',
+    year: '2025',
+    image: '/images/work-collection/logo-design/as.png',
     type: 'image' as const,
-    tags: ['BRANDING', 'LOGO DESIGN', 'IDENTITY'],
+    tags: ['Figma'],
+
   },
   {
     id: 14,
-    title: 'Brand Guidelines',
-    year: '2023',
-    image: '/images/logo.svg',
+    title: 'A S UNIQUE HR LOGO',
+    year: '2025',
+    image: '/images/work-collection/logo-design/na.png',
     type: 'image' as const,
-    tags: ['BRANDING', 'GUIDELINES', 'IDENTITY'],
-  },
-  {
-    id: 15,
-    title: 'Business Cards',
-    year: '2024',
-    image: '/images/logo.svg',
-    type: 'image' as const,
-    tags: ['BRANDING', 'PRINT', 'BUSINESS'],
+    tags: ['Figma'],
+
   },
 ];
 
 const BrandingProjects = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="flex flex-col md:flex-row justify-start items-center gap-8">
       {brandingProjects.map((project) => (
-        <div
+        <ProjectCardDetailed
           key={project.id}
-          className="group relative overflow-hidden rounded-xl bg-white/5 border p-4 border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
-          style={{ height: '400px' }}
-        >
-          {/* Combined Container - Visual Content + Text Info */}
-          <div className="h-full flex flex-col">
-            {/* Visual Content Container */}
-            <VisualContentContainer
-              image={project.image}
-              type={project.type}
-              title={project.title}
-            />
-
-            {/* Text Information Container */}
-            <TextInfoContainer
-              title={project.title}
-              year={project.year}
-              tags={project.tags}
-            />
-          </div>
-        </div>
+          title={project.title}
+          year={project.year}
+          tags={project.tags}
+          mediaType={project.type}
+          mediaSrc={project.image}
+          description={project.description}
+          onViewProject={() => console.log(`View ${project.title}`)}
+          onLiveDemo={() => console.log(`Live demo ${project.title}`)}
+          className="h-auto"
+        />
       ))}
     </div>
   );

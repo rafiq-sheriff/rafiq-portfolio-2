@@ -6,21 +6,24 @@ import GlareHover from '@/components/effects/GlareHover';
 
 const Hero = () => {
   return (
-    <div className="p-2 bg-white h-full">
+    <div id="hero" className="p-2 bg-white h-full">
       {/* Mobile Layout - Only visible on mobile screens */}
 
       <div className="md:hidden h-ful bg-[radial-gradient(circle_at_center,_#545454_0%,_#1E1E1E_100%)] relative overflow-hidden rounded-3xl p-3">
-        <div
-          className="relative mb-10 rounded-2xl px-4 py-3 z-20"
-          style={{
-            background:
-              'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            backdropFilter: 'blur(5px) saturate(120%)',
-            WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-          }}
-        >
-          <MobileNavbar />
+        {/* Sticky Mobile Navbar */}
+        <div className="fixed top-0 left-0 right-0 z-50 p-2 px-4 mt-2">
+          <div
+            className="rounded-2xl px-4 py-3"
+            style={{
+              background:
+                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(5px) saturate(120%)',
+              WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+            }}
+          >
+            <MobileNavbar />
+          </div>
         </div>
         {/* Background Image - Behind content */}
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-center z-0">
@@ -35,7 +38,7 @@ const Hero = () => {
         </div>
 
         {/* Content Container - All text and button in one div */}
-        <div className="relative z-10 h-full flex flex-col justify-between">
+        <div className="relative z-10 h-full flex flex-col justify-between pt-20">
           {/* Main Content Wrapper */}
           <div className="flex flex-col justify-between h-full gap-[17rem]">
             {/* First Section - UI/UX Badge and Description */}
@@ -106,6 +109,10 @@ const Hero = () => {
                   transitionDuration={800}
                   playOnce={false}
                   className="w-full"
+                  style={{
+                    backdropFilter: 'blur(5px) saturate(120%)',
+                    WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+                  }}
                   onClick={() => {
                     // Use a more reliable approach with multiple attempts
                     const scrollToWork = () => {
@@ -171,9 +178,8 @@ const Hero = () => {
           />
         </div>
 
-        {/* Main Container with consistent gaps */}
-        <div className="relative z-10 h-full flex flex-col justify-between">
-          {/* Navbar */}
+        {/* Sticky Navbar */}
+        <div className="fixed top-0 left-0 right-0 z-50 p-6">
           <div
             className="p-2 rounded-3xl"
             style={{
@@ -186,6 +192,10 @@ const Hero = () => {
           >
             <Navbar />
           </div>
+        </div>
+
+        {/* Main Container with consistent gaps */}
+        <div className="relative z-10 h-full flex flex-col justify-between pt-20">
           {/* Main Content Container */}
 
           {/* Top Section - Skill Tag and Description */}

@@ -33,7 +33,7 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className=" pt-10 md:px-8 px-4 bg-[#FFFFFF]">
+    <section id="experience" className=" pt-10 md:px-8 px-4 bg-[#FFFFFF]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl text-[#1f1f1f] font-bold  bricolage-grotesque">

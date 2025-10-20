@@ -67,7 +67,6 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
         {mediaType === 'video' && (
           <div className="absolute inset-0 bg-black/30"></div>
         )}
-        {description && <div className="absolute bottom-4 left-4 z-10"></div>}
       </div>
 
       {/* Title and Year Section */}
@@ -79,7 +78,7 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Tags Section */}
-      <div className={`flex gap-2 flex-wrap ${!removeTagMargin ? 'mb-6' : ''}`}>
+      <div className={`flex gap-2 flex-wrap ${!removeTagMargin ? 'mb-4' : ''}`}>
         {tags.map((tag, index) => (
           <div
             key={index}
@@ -90,6 +89,8 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
           </div>
         ))}
       </div>
+
+      
 
       {/* Buttons Section */}
       {!hideButtons && (

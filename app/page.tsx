@@ -4,7 +4,6 @@ import About from '@/components/pages/About';
 import Work from '@/components/pages/Work';
 import Process from '@/components/pages/Process';
 import Footer from '@/components/pages/Footer';
-import Hero5 from '@/components/pages/hero/hero5';
 import Contact2 from '@/components/pages/contact2';
 import Hero from '@/components/pages/hero/hero';
 import { ProjectCard, WorkCard } from '@/components/ui';
@@ -57,7 +56,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-[#000000] relative antialiased overflow-x-hidden">
+    <div className="min-h-screen w-full bg-[#ffffff] relative antialiased overflow-x-hidden">
       <div className="">
         {/* <Hero5 /> */}
         <Hero />
@@ -69,10 +68,9 @@ export default function Portfolio() {
       />
 
       <Work />
-      <div className="bg-[#ffffff] pb-12">
-        <Process />
-        <Contact2 />
-      </div>
+
+      <Process />
+      <Contact2 />
 
       <Footer />
     </div>

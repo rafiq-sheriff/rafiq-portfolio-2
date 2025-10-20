@@ -6,9 +6,9 @@ const WorkCollectionNavbar = () => {
   return (
     <>
       {/* Mobile Layout - Only visible on mobile screens */}
-      <div className="md:hidden">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 p-4">
         <div
-          className="relative mb-6 rounded-2xl px-4 py-3 z-20"
+          className="rounded-2xl px-4 py-3"
           style={{
             background:
               'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
@@ -22,7 +22,7 @@ const WorkCollectionNavbar = () => {
       </div>
 
       {/* Desktop Layout - Hidden on mobile, visible on desktop */}
-      <div className="hidden md:block mb-6">
+      <div className="hidden md:block fixed top-0 left-0 right-0 z-50 p-4">
         <div
           className="p-2 rounded-3xl"
           style={{

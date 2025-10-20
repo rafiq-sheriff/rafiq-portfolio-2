@@ -32,16 +32,17 @@ const Work = () => {
             }
           />
 
-          {/* Logo Design - Full width on mobile, half width on desktop */}
+          {/* Social Media Design - Full width on mobile, half width on desktop (moved here) */}
           <WorkCard
-            title="Logo"
-            subtitle="Design & Branding"
-            description="Development, Frontend"
-            mediaType="color"
-            backgroundColor="#44A54A"
+            title="Social Media"
+            subtitle="& Graphic Design"
+            description="iOS, Android"
+            mediaType="video"
+            mediaSrc="/videos/graphic-design/graphic-design.mp4"
             className="md:col-span-1 md:row-span-1"
             onClick={() =>
-              (window.location.href = '/work-collection?category=branding')
+              (window.location.href =
+                '/work-collection?category=graphic-design')
             }
           />
 
@@ -58,17 +59,18 @@ const Work = () => {
             }
           />
 
-          {/* Social Media Design - Full width on mobile, half width on desktop */}
+          {/* Logo Design - Full width on mobile, half width on desktop (moved here) */}
           <WorkCard
-            title="Social Media"
-            subtitle="& Graphic Design"
-            description="iOS, Android"
+            title="Logo"
+            subtitle="Design & Branding"
+            description="Development, Frontend"
+            // mediaType="color"
+            // backgroundColor="#44A54A"
             mediaType="video"
-            mediaSrc="/videos/graphic-design/graphic-design.mp4"
+            mediaSrc="/videos/logo/Untitled%20design.mp4"
             className="md:col-span-1 md:row-span-1"
             onClick={() =>
-              (window.location.href =
-                '/work-collection?category=graphic-design')
+              (window.location.href = '/work-collection?category=branding')
             }
           />
 

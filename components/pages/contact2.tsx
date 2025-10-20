@@ -1,6 +1,9 @@
 const Contact2 = () => {
   return (
-    <div className="h-full bg-white flex flex-col items-center justify-center px-8">
+    <div
+      id="contact"
+      className="h-full bg-white flex flex-col items-center justify-center px-8 pt-6 pb-12"
+    >
       {/* <div
         className="mb-12 max-w-6xl mx-auto py-12 px-24 rounded-3xl"
         style={{
@@ -123,11 +126,14 @@ const Contact2 = () => {
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
+                onClick={() => {
+                  window.open('https://www.instagram.com/rafiq_sheriff/', '_blank');
+                }}
               >
                 INSTAGRAM
               </button>
 
-              {/* DRIBBBLE - center right */}
+              {/* twitter - center right */}
               <button
                 className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
                 style={{
@@ -142,7 +148,7 @@ const Contact2 = () => {
                   whiteSpace: 'nowrap',
                 }}
               >
-                DRIBBBLE
+                twitter
               </button>
 
               {/* BEHANCE - bottom left */}
@@ -158,6 +164,9 @@ const Contact2 = () => {
                   padding: '12px 24px',
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
+                }}
+                onClick={() => {
+                  window.open('https://www.behance.net/rafiqsheriff1', '_blank');
                 }}
               >
                 BEHANCE
@@ -176,6 +185,9 @@ const Contact2 = () => {
                   padding: '12px 24px',
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
+                }}
+                onClick={() => {
+                  window.open('https://www.linkedin.com/in/rafiq-sheriff-2ab36b282/', '_blank');
                 }}
               >
                 LINKEDIN
@@ -249,11 +261,14 @@ const Contact2 = () => {
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
                 }}
+                onClick={() => {
+                  window.open('https://www.instagram.com/rafiq_sheriff/', '_blank');
+                }}
               >
                 INSTAGRAM
               </button>
 
-              {/* DRIBBBLE Button - Mid Right */}
+              {/* TWITTER Button - Mid Right */}
               <button
                 className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white  hover:text-[#1f1f1f] uppercase tracking-wide"
                 style={{
@@ -269,7 +284,7 @@ const Contact2 = () => {
                   whiteSpace: 'nowrap',
                 }}
               >
-                DRIBBBLE
+                TWITTER
               </button>
 
               {/* BEHANCE Button - Bottom Left */}
@@ -285,6 +300,9 @@ const Contact2 = () => {
                   padding: '12px 24px',
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
+                }}
+                onClick={() => {
+                  window.open('https://www.behance.net/rafiqsheriff1', '_blank');
                 }}
               >
                 BEHANCE
@@ -303,6 +321,9 @@ const Contact2 = () => {
                   padding: '12px 24px',
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
+                }}
+                onClick={() => {
+                  window.open('https://www.linkedin.com/in/rafiq-sheriff-2ab36b282/', '_blank');
                 }}
               >
                 LINKEDIN

@@ -1,16 +1,85 @@
+'use client';
+import { useRouter, usePathname } from 'next/navigation';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
 
 const Navbar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLogoClick = () => {
+    if (pathname === '/work-collection') {
+      // If on work collection page, navigate to home
+      router.push('/');
+    } else {
+      // If on home page, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    if (pathname === '/work-collection') {
+      // If on work collection page, navigate to home with section hash
+      router.push(`/#${sectionId}`);
+    } else {
+      // If on home page, scroll to section
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }
+  };
+
   return (
-    <div className="flex items-center justify-between w-full">
-      <h1 className="text-white text-2xl font-bold">Sherifiq Pixelhaus</h1>
+    <div className="flex items-center justify-between w-full ">
+      <h1
+        className="text-white text-2xl tracking-wider cursor-pointer hover:text-white/80 transition-colors"
+        style={{
+          fontFamily: '"Playfair", serif',
+          fontOpticalSizing: 'auto',
+          fontWeight: '400',
+          fontStyle: 'normal',
+          fontVariationSettings: '"wdth" 100',
+          letterSpacing: '0.10em',
+        }}
+        onClick={handleLogoClick}
+      >
+        SHERIFIQ PIXELHAUS
+      </h1>
       <div className="flex items-center gap-5">
-        <p className="text-white/50">Home</p>
-        <p className="text-white/50">About</p>
-        <p className="text-white/50">Work</p>
-        <p className="text-white/50">Experience</p>
-        <p className="text-white/50">Contact</p>
+        <button
+          className="text-white/50 hover:text-white transition-colors"
+          onClick={() => handleNavClick('hero')}
+        >
+          Home
+        </button>
+        <button
+          className="text-white/50 hover:text-white transition-colors"
+          onClick={() => handleNavClick('about')}
+        >
+          About
+        </button>
+        <button
+          className="text-white/50 hover:text-white transition-colors"
+          onClick={() => handleNavClick('work')}
+        >
+          Work
+        </button>
+        <button
+          className="text-white/50 hover:text-white transition-colors"
+          onClick={() => handleNavClick('experience')}
+        >
+          Process
+        </button>
+        <button
+          className="text-white/50 hover:text-white transition-colors"
+          onClick={() => handleNavClick('contact')}
+        >
+          Contact
+        </button>
       </div>
 
       <GlareHover
@@ -25,6 +94,10 @@ const Navbar = () => {
         glareSize={300}
         transitionDuration={800}
         playOnce={false}
+        onClick={() => {
+          // Handle CV download
+          console.log('Download CV clicked');
+        }}
         style={{
           backdropFilter: 'blur(5px) saturate(120%)',
           WebkitBackdropFilter: 'blur(0px) saturate(10%)',
