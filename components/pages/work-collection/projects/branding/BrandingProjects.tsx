@@ -5,25 +5,25 @@ import { StaggerAnimation } from '@/components/animations';
 const brandingProjects = [
   {
     id: 13,
-    title: 'A S CODELABS LOGO',
+    title: 'A S UNIQUE FOOD LOGO',
     year: '2025',
     image: '/images/work-collection/logo-design/as.png',
     type: 'image' as const,
     tags: ['Figma'],
     behanceUrl:
       'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
-    description: 'Professional logo design for A S CODELABS',
+
   },
   {
     id: 14,
-    title: 'A S UNIQUE HR LOGO',
+    title: 'NADIR ALUMINIUM',
     year: '2025',
     image: '/images/work-collection/logo-design/na.png',
     type: 'image' as const,
     tags: ['Figma'],
     behanceUrl:
       'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
-    description: 'Professional logo design for A S UNIQUE HR',
+    
   },
 ];
 

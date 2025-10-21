@@ -8,9 +8,11 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandBehance,
+  IconBrandTwitter,
 } from '@tabler/icons-react';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
+import { downloadCV } from '@/lib/downloadUtils';
 
 const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +54,8 @@ const MobileNavbar = () => {
     { label: 'Home', sectionId: 'hero' },
     { label: 'About', sectionId: 'about' },
     { label: 'Work', sectionId: 'work' },
-    { label: 'Process', sectionId: 'experience' },
+    { label: 'Experience', sectionId: 'experience' },
+    { label: 'Contact', sectionId: 'contact' },
   ];
 
   return (
@@ -75,7 +78,7 @@ const MobileNavbar = () => {
           SHERIFIQ PIXELHAUS
         </h1>
 
-        {/* Hamburger Menu Button */}
+        {/* Simple Hamburger Menu Button */}
         <button
           onClick={toggleMenu}
           className="flex flex-col items-center justify-center w-8 h-8 space-y-1"
@@ -100,181 +103,243 @@ const MobileNavbar = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 z-50 ${
-          isMenuOpen ? '' : 'pointer-events-none'
-        }`}
-      >
-        {/* Semi-transparent backdrop */}
-        <div
-          className={`absolute inset-0  backdrop-blur-sm transition-opacity duration-300 ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
-          onClick={toggleMenu}
-        />
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50">
+          {/* Semi-transparent backdrop */}
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+            onClick={toggleMenu}
+          />
 
-        {/* Menu Drawer - Half screen width */}
-        <div
-          className={`absolute right-0 top-0 h-full w- bg-[#000000] shadow-2xl transform transition-transform duration-300 ease-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          {/* Solid dark green top bar */}
-          <div className="bg-[#0b3b31] h-16 flex items-center justify-end px-6">
-            <button
-              aria-label="Close menu"
-              onClick={toggleMenu}
-              className="p-2 text-white hover:text-white/80 transition-colors"
-            >
-              <IconX size={24} />
-            </button>
-          </div>
-
-          {/* Main menu area */}
-          <div className="flex-1 px-6 py-8 bg-[#000000]">
-            {/* Navigation Items */}
-            <div className="space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => {
-                    handleNavClick(item.sectionId);
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full"
-                >
-                  <div className="px-6 py-5 rounded-2xl bg-white/10 hover:bg-white/15 transition-colors">
-                    <span className="text-2xl font-light text-white">
-                      {item.label}
-                    </span>
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            {/* Download CV button */}
-            <div className="mt-8">
-              <GlareHover
-                width="100%"
-                height="3rem"
-                background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
-                borderRadius="16px"
-                borderColor="rgba(255, 255, 255, 0.2)"
-                glareColor="#ffffff"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={800}
-                playOnce={false}
-                style={{
-                  backdropFilter: 'blur(5px) saturate(120%)',
-                  WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-                }}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <button
-                  className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none"
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    borderRadius: '16px',
-                    height: '3rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#F5EFF7',
-                    fontFamily: 'Sora, sans-serif',
-                    fontSize: '16px',
-                    fontWeight: '400',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  <ShinyText
-                    text="Download CV"
-                    disabled={false}
-                    speed={2}
-                    className="text-white font-sora text-base font-normal"
-                  />
-                </button>
-              </GlareHover>
-            </div>
-
-            {/* Contact button */}
-            <div className="mt-4">
+          {/* Menu Drawer - Top to Bottom Animation with Glass Morphism */}
+          <div
+            className="absolute top-0 left-0 w-full shadow-2xl transform transition-transform duration-500 ease-out translate-y-0 rounded-xl"
+            style={{
+              height: 'auto',
+              maxHeight: '85vh',
+              overflowY: 'auto',
+              background:
+                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 0%)',
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(20px) saturate(120%)',
+              WebkitBackdropFilter: 'blur(15px) saturate(100%)',
+            }}
+          >
+            {/* Enhanced header with gradient and better close button */}
+            <div className="bg-gradient-to-r from-[#0b3b31] via-[#0d4a3a] to-[#0b3b31] h-16 flex items-center justify-between px-6 border-b border-white/10">
+              <div className="text-white/80 text-xl font-medium tracking-wide bricolage-grotesque">
+                Menu
+              </div>
               <button
-                onClick={() => {
-                  handleNavClick('contact');
-                  setIsMenuOpen(false);
-                }}
-                className="w-full"
+                aria-label="Close menu"
+                onClick={toggleMenu}
+                className="p-2 rounded-lg text-white hover:text-white/80 hover:bg-white/10 transition-all duration-300 group"
               >
-                <div className="px-8 py-4 rounded-full bg-white text-[#0b3b31] text-center font-medium shadow-lg">
-                  Contact Us
-                </div>
+                <IconX
+                  size={24}
+                  className="group-hover:rotate-90 transition-transform duration-300"
+                />
               </button>
             </div>
 
-            {/* Socials */}
-            <div className="mt-12">
-              <p className="text-lg mb-6 text-white">Connect with me</p>
-              <div className="flex items-center gap-4">
-                <a
-                  href="mailto:hello@sherifiq.com"
-                  aria-label="Email"
-                  className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+            {/* Enhanced main menu area with glass morphism */}
+            <div className="flex-1 px-6 py-8">
+              {/* Navigation Items with enhanced styling */}
+              <div className="space-y-3">
+                {navItems.map((item, index) => (
+                  <button
+                    key={item.label}
+                    onClick={() => {
+                      handleNavClick(item.sectionId);
+                      setIsMenuOpen(false);
+                    }}
+                    className="w-full group"
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                    }}
+                  >
+                    <div
+                      className="p-3 rounded-xl transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg group-hover:shadow-white/10"
+                      style={{
+                        background:
+                          'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'blur(8px) saturate(120%)',
+                        WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                      }}
+                    >
+                      <span className="text-xl font-light text-white/50 group-hover:text-white/90 transition-colors duration-300">
+                        {item.label}
+                      </span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Enhanced Download CV button */}
+              <div className="mt-8">
+                <GlareHover
+                  width="100%"
+                  height="3.5rem"
+                  background="linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(42,42,42,0.8) 100%)"
+                  borderRadius="16px"
+                  borderColor="rgba(255, 255, 255, 0.3)"
+                  glareColor="#ffffff"
+                  glareOpacity={0.4}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                  style={{
+                    backdropFilter: 'blur(8px) saturate(120%)',
+                    WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                  }}
+                  onClick={() => {
+                    downloadCV();
+                    setIsMenuOpen(false);
+                  }}
                 >
-                  <IconMail size={24} className="text-white" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                  className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-                >
-                  <IconBrandInstagram size={24} className="text-white" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                  className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-                >
-                  <IconBrandLinkedin size={24} className="text-white" />
-                </a>
-                <a
-                  href="https://behance.net"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Behance"
-                  className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-                >
-                  <IconBrandBehance size={24} className="text-white" />
-                </a>
+                  <button
+                    className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-[1.02] bg-transparent border-none group"
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      borderRadius: '20px',
+                      height: '3.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#F5EFF7',
+                      fontFamily: 'Sora, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: '500',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    <ShinyText
+                      text="Download CV"
+                      disabled={false}
+                      speed={2}
+                      className="text-white font-sora text-base font-medium group-hover:text-white/90"
+                    />
+                  </button>
+                </GlareHover>
+              </div>
+
+              {/* Enhanced Socials section */}
+              <div className="mt-12">
+                <p className="text-lg mb-6 text-white font-medium  tracking-wide bricolage-grotesque ">
+                  Connect with me
+                </p>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="mailto:sheriffrafiq71@gmail.com"
+                    aria-label="Email"
+                    className="p-2 rounded-xl"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(8px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                    }}
+                  >
+                    <IconMail
+                      size={35}
+                      stroke={1.3}
+                      className="text-white/80 "
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/rafiq_sheriff/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                    className="p-2 rounded-xl"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(8px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                    }}
+                  >
+                    <IconBrandInstagram
+                      size={35}
+                      stroke={1.3}
+                      className="text-white/80"
+                    />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/rafiq-sheriff-2ab36b282/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
+                    className="p-2 rounded-xl "
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(8px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                    }}
+                  >
+                    <IconBrandLinkedin
+                      size={35}
+                      stroke={1.3}
+                      className="text-white/80"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.behance.net/rafiqsheriff1"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Behance"
+                    className="p-2 rounded-xl"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(8px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                    }}
+                  >
+                    <IconBrandBehance
+                      size={35}
+                      stroke={1.3}
+                      className="text-white/80"
+                    />
+                  </a>
+                  <a
+                    href="https://x.com/RafiqSheriff?t=kTtCEeaX78JSKrFElEPuCg&s=09"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Twitter"
+                    className="p-2 rounded-xl"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(8px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                    }}
+                  >
+                    <IconBrandTwitter
+                      size={35}
+                      stroke={1.3}
+                      className="text-white/80"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/*
-        LEGACY OVERLAY (kept for reference per user's request not to delete):
-        The previous center-overlay menu is preserved in comments below. If you prefer
-        the older glowing button/ShinyText list, it can be re-enabled and adapted to
-        the new drawer container.
-
-        {isMenuOpen && (
-          <div className="absolute top-0 left-0 w-full h-full z-50">
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={toggleMenu} />
-            <div className="relative z-10 p-6"> ...old content... </div>
-          </div>
-        )}
-      */}
+      )}
     </div>
   );
 };
 
 export default MobileNavbar;
-

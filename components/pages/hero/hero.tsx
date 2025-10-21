@@ -34,7 +34,7 @@ const Hero = () => {
             src="/images/Hero1.png"
             alt="Rafiq Sheriff"
             width={400}
-            height={500}
+            height={634}
             className="object-cover opacity-100"
             priority
           />
@@ -166,7 +166,7 @@ const Hero = () => {
             src="/images/Hero1.png"
             alt="Rafiq Sheriff"
             width={400}
-            height={600}
+            height={634}
             className="object-cover opacity-100"
             priority
           />

@@ -2,6 +2,7 @@
 import { useRouter, usePathname } from 'next/navigation';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
+import { downloadCV } from '@/lib/downloadUtils';
 
 const Navbar = () => {
   const router = useRouter();
@@ -94,10 +95,7 @@ const Navbar = () => {
         glareSize={300}
         transitionDuration={800}
         playOnce={false}
-        onClick={() => {
-          // Handle CV download
-          console.log('Download CV clicked');
-        }}
+        onClick={downloadCV}
         style={{
           backdropFilter: 'blur(5px) saturate(120%)',
           WebkitBackdropFilter: 'blur(0px) saturate(10%)',
