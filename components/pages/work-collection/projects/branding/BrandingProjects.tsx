@@ -12,7 +12,6 @@ const brandingProjects = [
     tags: ['Figma'],
     behanceUrl:
       'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
-
   },
   {
     id: 14,
@@ -23,7 +22,6 @@ const brandingProjects = [
     tags: ['Figma'],
     behanceUrl:
       'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
-    
   },
 ];
 
@@ -39,7 +37,6 @@ const BrandingProjects = () => {
             tags={project.tags}
             mediaType={project.type}
             mediaSrc={project.image}
-            description={project.description}
             onViewProject={() => window.open(project.behanceUrl, '_blank')}
             onLiveDemo={() => console.log(`Live demo ${project.title}`)}
             className="h-auto"
