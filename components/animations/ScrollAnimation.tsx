@@ -10,7 +10,6 @@ interface ScrollAnimationProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade';
   distance?: number;
   once?: boolean;
-  threshold?: number;
 }
 
 const ScrollAnimation = ({
@@ -21,12 +20,10 @@ const ScrollAnimation = ({
   direction = 'up',
   distance = 50,
   once = true,
-  threshold = 0.1,
 }: ScrollAnimationProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once,
-    threshold,
     margin: '-50px 0px -50px 0px',
   });
 

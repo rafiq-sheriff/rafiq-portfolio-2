@@ -18,7 +18,6 @@ const ProgressBar = ({
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    threshold: 0.3,
     margin: '-50px 0px -50px 0px',
   });
 

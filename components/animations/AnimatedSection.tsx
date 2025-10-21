@@ -10,7 +10,6 @@ interface AnimatedSectionProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade';
   distance?: number;
   once?: boolean;
-  threshold?: number;
   staggerChildren?: boolean;
   staggerDelay?: number;
 }
@@ -23,14 +22,12 @@ const AnimatedSection = ({
   direction = 'up',
   distance = 50,
   once = true,
-  threshold = 0.1,
   staggerChildren = false,
   staggerDelay = 0.1,
 }: AnimatedSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once,
-    threshold,
     margin: '-50px 0px -50px 0px',
   });
 
