@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ProjectCardDetailed } from '@/components/ui';
 import ShinyText from '@/components/effects/ShinyText';
+import GlareHover from '@/components/effects/GlareHover';
 
 // Graphic Design Projects Data
 const graphicDesignProjects = [
@@ -318,27 +319,51 @@ const GraphicDesignProjects = () => {
 
             {/* View Project Button */}
             <div className="flex gap-3 lg:flex-col md:flex-row flex-col">
-              <button
-                className="text-white px-6 py-3 rounded-[1rem] flex-1 font-medium hover:bg-[#2a2a2a] transition-colors text-lg"
+              <GlareHover
+                width="100%"
+                height="48px"
+                background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+                borderRadius="16px"
+                borderColor="rgba(255, 255, 255, 0.2)"
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
                 style={{
-                  background:
-                    'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
+                  backdropFilter: 'blur(5px) saturate(120%)',
+                  WebkitBackdropFilter: 'blur(0px) saturate(10%)',
                 }}
-                onClick={(e) => {
-                  e.stopPropagation();
+                onClick={() => {
                   openModal(item);
                 }}
               >
-                <ShinyText
-                  text="View Project"
-                  disabled={false}
-                  speed={2}
-                  className="text-white font-medium"
-                />
-              </button>
+                <button
+                  className="px-6 py-3 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    borderRadius: '16px',
+                    color: '#F5EFF7',
+                    fontFamily: 'Sora, sans-serif',
+                    fontSize: '16px',
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <ShinyText
+                    text="View Project"
+                    disabled={false}
+                    speed={2}
+                    className="text-white font-medium"
+                  />
+                </button>
+              </GlareHover>
             </div>
           </div>
         ))}

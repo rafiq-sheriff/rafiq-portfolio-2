@@ -1,6 +1,25 @@
 import './GlareHover.css';
+import React from 'react';
 
-const GlareHover = ({
+interface GlareHoverProps {
+  width?: string;
+  height?: string;
+  background?: string;
+  borderRadius?: string;
+  borderColor?: string;
+  children: React.ReactNode;
+  glareColor?: string;
+  glareOpacity?: number;
+  glareAngle?: number;
+  glareSize?: number;
+  transitionDuration?: number;
+  playOnce?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+}
+
+const GlareHover: React.FC<GlareHoverProps> = ({
   width = '500px',
   height = '500px',
   background = '#000',

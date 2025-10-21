@@ -242,94 +242,96 @@ const Hero = () => {
           {/* Bottom Section - Main Heading and Button */}
           <div className="flex flex-row justify-between w-full items-end">
             {/* Main Heading */}
-            <div className="">
+            <div className="flex-shrink-0">
               <h1 className="text-white text-7xl aboreto-regular font-light leading-tight">
-                <span className="block text-6xl aboreto-regular mb-2 text-white/50">
+                <span className="block text-4xl aboreto-regular mb-2 text-white/50">
                   HI I'M
                 </span>
-                <span className="block text-7xl aboreto-regular tracking-wide whitespace-nowrap">
+                <span className="block text-6xl aboreto-regular tracking-wide whitespace-nowrap">
                   <MorphingText
                     texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
-                    className="text-white text-7xl aboreto-regular tracking-wide whitespace-nowrap"
+                    className="text-white text-6xl aboreto-regular tracking-wide whitespace-nowrap"
                   />
                 </span>
               </h1>
             </div>
 
             {/* View Projects Button */}
-            <GlareHover
-              width="12rem"
-              height="3rem"
-              background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
-              borderRadius="16px"
-              borderColor="rgba(255, 255, 255, 0.2)"
-              glareColor="#ffffff"
-              glareOpacity={0.3}
-              glareAngle={-30}
-              glareSize={300}
-              transitionDuration={800}
-              playOnce={false}
-              style={{
-                backdropFilter: 'blur(5px) saturate(120%)',
-                WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-              }}
-              onClick={() => {
-                // Use a more reliable approach with multiple attempts
-                const scrollToWork = () => {
-                  const workSection = document.getElementById('work');
-                  if (workSection) {
-                    workSection.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                    });
-                    return true;
-                  }
-                  return false;
-                };
-
-                // Try immediately
-                if (!scrollToWork()) {
-                  // If not found, try again after a short delay
-                  setTimeout(() => {
-                    if (!scrollToWork()) {
-                      // Final fallback: scroll down by viewport height
-                      window.scrollTo({
-                        top: window.scrollY + window.innerHeight,
-                        behavior: 'smooth',
-                      });
-                    }
-                  }, 200);
-                }
-              }}
-            >
-              <button
-                className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center"
+            <div className="flex-shrink-0">
+              <GlareHover
+                width="12rem"
+                height="3rem"
+                background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+                borderRadius="16px"
+                borderColor="rgba(255, 255, 255, 0.2)"
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
                 style={{
-                  width: '12rem',
-                  height: '3rem',
-                  margin: 0,
-                  background: 'transparent',
-                  border: 'none',
-                  borderRadius: '16px',
-                  color: '#F5EFF7',
-                  fontFamily: 'Sora, sans-serif',
-                  fontSize: '16px',
-                  fontWeight: '400',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  backdropFilter: 'blur(5px) saturate(120%)',
+                  WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+                }}
+                onClick={() => {
+                  // Use a more reliable approach with multiple attempts
+                  const scrollToWork = () => {
+                    const workSection = document.getElementById('work');
+                    if (workSection) {
+                      workSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                      });
+                      return true;
+                    }
+                    return false;
+                  };
+
+                  // Try immediately
+                  if (!scrollToWork()) {
+                    // If not found, try again after a short delay
+                    setTimeout(() => {
+                      if (!scrollToWork()) {
+                        // Final fallback: scroll down by viewport height
+                        window.scrollTo({
+                          top: window.scrollY + window.innerHeight,
+                          behavior: 'smooth',
+                        });
+                      }
+                    }, 200);
+                  }
                 }}
               >
-                <ShinyText
-                  text="View Projects"
-                  disabled={false}
-                  speed={3}
-                  className="text-white font-sora text-base font-normal"
-                />
-              </button>
-            </GlareHover>
+                <button
+                  className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center"
+                  style={{
+                    width: '12rem',
+                    height: '3rem',
+                    margin: 0,
+                    background: 'transparent',
+                    border: 'none',
+                    borderRadius: '16px',
+                    color: '#F5EFF7',
+                    fontFamily: 'Sora, sans-serif',
+                    fontSize: '16px',
+                    fontWeight: '400',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <ShinyText
+                    text="View Projects"
+                    disabled={false}
+                    speed={3}
+                    className="text-white font-sora text-base font-normal"
+                  />
+                </button>
+              </GlareHover>
+            </div>
           </div>
         </div>
       </div>

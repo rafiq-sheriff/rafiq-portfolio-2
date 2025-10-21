@@ -9,7 +9,9 @@ const brandingProjects = [
     image: '/images/work-collection/logo-design/as.png',
     type: 'image' as const,
     tags: ['Figma'],
-
+    behanceUrl:
+      'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
+    description: 'Professional logo design for A S CODELABS',
   },
   {
     id: 14,
@@ -18,7 +20,9 @@ const brandingProjects = [
     image: '/images/work-collection/logo-design/na.png',
     type: 'image' as const,
     tags: ['Figma'],
-
+    behanceUrl:
+      'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
+    description: 'Professional logo design for A S UNIQUE HR',
   },
 ];
 
@@ -34,7 +38,7 @@ const BrandingProjects = () => {
           mediaType={project.type}
           mediaSrc={project.image}
           description={project.description}
-          onViewProject={() => console.log(`View ${project.title}`)}
+          onViewProject={() => window.open(project.behanceUrl, '_blank')}
           onLiveDemo={() => console.log(`Live demo ${project.title}`)}
           className="h-auto"
         />

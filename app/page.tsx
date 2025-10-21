@@ -58,7 +58,6 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen w-full bg-[#ffffff] relative antialiased overflow-x-hidden">
       <div className="">
-        {/* <Hero5 /> */}
         <Hero />
       </div>
       <About

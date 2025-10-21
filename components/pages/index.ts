@@ -6,6 +6,3 @@ export { default as Work } from './Work';
 
 // Work Collection Components
 export { WorkCollection } from './work-collection';
-
-// Hero Components
-export { default as Hero5 } from './hero/hero5';

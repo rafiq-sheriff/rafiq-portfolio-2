@@ -1,6 +1,4 @@
 import './globals.css';
-// Import StaggeredMenu styles - commented out as file was deleted
-// import '../components/ui/StaggeredMenu.css';
 
 export const metadata = {
   title: 'Next.js',

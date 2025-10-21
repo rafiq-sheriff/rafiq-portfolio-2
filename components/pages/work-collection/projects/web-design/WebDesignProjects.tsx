@@ -1,5 +1,13 @@
 import { ProjectCardDetailed } from '@/components/ui';
 
+// Project URLs mapping
+const projectUrls: { [key: string]: string } = {
+  'A S CODELABS': 'https://ascodelabs.com/',
+  'A S UNIQUE HR': 'https://asuhr.ascodelabs.com/',
+  'A S UNIQUE TRADERS': 'https://asuniquetraders.com/',
+  'PERSONAL PORTFOLIO (old)': 'https://rafiq-sheriff-portfolio.vercel.app/',
+};
+
 // Web Design Projects Data
 const webDesignProjects = [
   {
@@ -55,6 +63,15 @@ const webDesignProjects = [
 ];
 
 const WebDesignProjects = () => {
+  const handleViewProject = (projectTitle: string) => {
+    const url = projectUrls[projectTitle];
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else {
+      console.log(`No URL found for project: ${projectTitle}`);
+    }
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
       {webDesignProjects.map((project) => (
@@ -66,7 +83,7 @@ const WebDesignProjects = () => {
           mediaType={project.type}
           mediaSrc={project.image}
           description={project.description}
-          onViewProject={() => console.log(`View ${project.title}`)}
+          onViewProject={() => handleViewProject(project.title)}
           onLiveDemo={() => console.log(`Live demo ${project.title}`)}
           className="h-auto"
         />

@@ -1,6 +1,3 @@
-// UI Components
-export { default as PortfolioNavbar } from './portfolio-navbar';
-
 // Card Components
 export { default as ProjectCard } from './ProjectCard';
 export { default as ProjectCardDetailed } from './ProjectCardDetailed';

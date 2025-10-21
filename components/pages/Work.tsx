@@ -52,7 +52,7 @@ const Work = () => {
             subtitle="Design & Development"
             description="Responsive, Engaging"
             mediaType="video"
-            mediaSrc="/videos/web/web.mp4"
+            mediaSrc="/videos/web/web1.mp4"
             className="md:col-span-2 md:row-span-1"
             onClick={() =>
               (window.location.href = '/work-collection?category=web-design')
