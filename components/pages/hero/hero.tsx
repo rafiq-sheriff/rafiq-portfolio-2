@@ -3,6 +3,7 @@ import Navbar from '@/components/navigation/navbar';
 import MobileNavbar from '@/components/navigation/mobile-navbar';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
+import { MorphingText } from '@/components/ui/morphing-text';
 
 const Hero = () => {
   return (
@@ -64,7 +65,7 @@ const Hero = () => {
                     />
                   </div>
                   <ShinyText
-                    text="Ui/Ux And Frontend Engineer"
+                    text="Ui/Ux & Frontend Engineer"
                     disabled={false}
                     speed={2}
                     className="text-white/50 text-sm font-light"
@@ -73,7 +74,7 @@ const Hero = () => {
               </div>
 
               {/* Description Text */}
-              <div className="mb-8">
+              <div className="mb-12">
                 <p className="text-white/50 text-xl font-light leading-relaxed text-left">
                   A Visual Designer And Web Developer Crafting Digital Stories
                 </p>
@@ -83,13 +84,16 @@ const Hero = () => {
             {/* Second Section - Name and Button */}
             <div className="flex flex-col">
               {/* Name Text */}
-              <div className="mb-8">
-                <h1 className="text-white font-light leading-tight aboreto-regular">
-                  <span className="block text-4xl mb-2 text-white/50">
+              <div className="mb-6">
+                <h1 className="text-white font-light leading-tight aboreto-regular ">
+                  <span className="block text-2xl mb-2 text-white/50">
                     HI I'M
                   </span>
-                  <span className="block text-[2.5rem] font-medium tracking-wide">
-                    RAFIQ SHERIFF S
+                  <span className="block text-[1rem] font-medium tracking-wide">
+                    <MorphingText
+                      texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
+                      className="text-white text-3xl font-medium tracking-wide"
+                    />
                   </span>
                 </h1>
               </div>
@@ -199,7 +203,7 @@ const Hero = () => {
           {/* Main Content Container */}
 
           {/* Top Section - Skill Tag and Description */}
-          <div className="flex flex-row justify-between items-end">
+          <div className="flex flex-row justify-between items-start mt-5">
             {/* Skill Tag */}
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full w-fit"
@@ -240,11 +244,14 @@ const Hero = () => {
             {/* Main Heading */}
             <div className="">
               <h1 className="text-white text-7xl aboreto-regular font-light leading-tight">
-                <span className="block text-7xl aboreto-regular mb-2 text-white/50">
+                <span className="block text-6xl aboreto-regular mb-2 text-white/50">
                   HI I'M
                 </span>
-                <span className="block text-7xl aboreto-regular tracking-wide">
-                  RAFIQ SHERIFF S
+                <span className="block text-7xl aboreto-regular tracking-wide whitespace-nowrap">
+                  <MorphingText
+                    texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
+                    className="text-white text-7xl aboreto-regular tracking-wide whitespace-nowrap"
+                  />
                 </span>
               </h1>
             </div>

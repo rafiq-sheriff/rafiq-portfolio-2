@@ -5,10 +5,10 @@ import GlareHover from '@/components/effects/GlareHover';
 
 const Work = () => {
   return (
-    <div className="bg-[#ffffff] p-3">
+    <div className="bg-[#ffffff] px-3">
       <div
         id="work"
-        className="md:p-8 p-4 rounded-3xl scroll-mt-20"
+        className="md:px-8 md:py-9 p-4 rounded-3xl scroll-mt-20"
         style={{
           backgroundImage:
             'linear-gradient(to bottom, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
@@ -23,7 +23,7 @@ const Work = () => {
           <WorkCard
             title="Mobile App"
             subtitle="Design"
-            description="User Interface, Design"
+            description="User-centric, Seamless"
             mediaType="video"
             mediaSrc="/videos/app-design/mobile-app.mp4"
             className="md:col-span-1 md:row-span-1"
@@ -36,7 +36,7 @@ const Work = () => {
           <WorkCard
             title="Social Media"
             subtitle="& Graphic Design"
-            description="iOS, Android"
+            description="Visual, Impactful"
             mediaType="video"
             mediaSrc="/videos/graphic-design/graphic-design.mp4"
             className="md:col-span-1 md:row-span-1"
@@ -50,7 +50,7 @@ const Work = () => {
           <WorkCard
             title="Web"
             subtitle="Design & Development"
-            description="Brand Identity, Website"
+            description="Responsive, Engaging"
             mediaType="video"
             mediaSrc="/videos/web/web.mp4"
             className="md:col-span-2 md:row-span-1"
@@ -63,7 +63,7 @@ const Work = () => {
           <WorkCard
             title="Logo"
             subtitle="Design & Branding"
-            description="Development, Frontend"
+            description="Memorable, Distinctive"
             // mediaType="color"
             // backgroundColor="#44A54A"
             mediaType="video"
@@ -78,7 +78,7 @@ const Work = () => {
           <WorkCard
             title="Mobile"
             subtitle="Photography"
-            description="Portrait, Events"
+            description="Creative, Expressive"
             mediaType="video"
             mediaSrc="/videos/photography/Photograpgy.mp4"
             className="md:col-span-1 md:row-span-1"

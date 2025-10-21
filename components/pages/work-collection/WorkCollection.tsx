@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import WorkCollectionNavbar from './WorkCollectionNavbar';
 import CategoryFilterButtons from './CategoryFilterButtons';
 import BackButton from './BackButton';
@@ -12,8 +13,20 @@ import {
 } from './projects';
 
 const WorkCollection = () => {
-  // Set Web Design & Development as default category
-  const [activeCategory, setActiveCategory] = useState('web-design');
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get('category');
+
+  // Set category from URL parameter or default to web-design
+  const [activeCategory, setActiveCategory] = useState(
+    categoryFromUrl || 'web-design'
+  );
+
+  // Update active category when URL parameter changes
+  useEffect(() => {
+    if (categoryFromUrl) {
+      setActiveCategory(categoryFromUrl);
+    }
+  }, [categoryFromUrl]);
 
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);

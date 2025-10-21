@@ -39,7 +39,14 @@ const Contact2 = () => {
             <span className="text-xl md:text-lg font-medium text-[#1f1f1f]">
               sheriffrafiq71@gmail.com
             </span>
-            <div className="w-10 h-10 bg-[#1f1f1f] rounded-full flex items-center justify-center">
+            <button
+              type="button"
+              className="w-10 h-10 bg-[#1f1f1f] rounded-full flex items-center justify-center transition hover:bg-[#333]"
+              onClick={() => {
+                window.location.href = 'mailto:sheriffrafiq71@gmail.com';
+              }}
+              aria-label="Send Email"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -49,7 +56,7 @@ const Contact2 = () => {
               >
                 <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
               </svg>
-            </div>
+            </button>
           </div>
         </div>
 
@@ -133,23 +140,26 @@ const Contact2 = () => {
                 INSTAGRAM
               </button>
 
-              {/* twitter - center right */}
-              <button
-                className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
-                style={{
-                  top: '44.7%',
-                  left: '53.8%',
-                  borderRadius: '50px',
-                  cursor: 'pointer',
-                  transition: 'all 0.1s ease',
-                  zIndex: 7,
-                  padding: '12px 24px',
-                  fontSize: '14px',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                twitter
-              </button>
+                {/* twitter - center right */}
+                <button
+                  className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
+                  style={{
+                    top: '44.7%',
+                    left: '53.8%',
+                    borderRadius: '50px',
+                    cursor: 'pointer',
+                    transition: 'all 0.1s ease',
+                    zIndex: 7,
+                    padding: '12px 24px',
+                    fontSize: '14px',
+                    whiteSpace: 'nowrap',
+                  }}
+                  onClick={() => {
+                    window.open('https://x.com/RafiqSheriff?t=kTtCEeaX78JSKrFElEPuCg&s=09', '_blank');
+                  }}
+                >
+                  TWITTER
+                </button>
 
               {/* BEHANCE - bottom left */}
               <button
@@ -282,6 +292,9 @@ const Contact2 = () => {
                   padding: '12px 24px',
                   fontSize: '14px',
                   whiteSpace: 'nowrap',
+                }}
+                onClick={() => {
+                  window.open('https://x.com/RafiqSheriff?t=kTtCEeaX78JSKrFElEPuCg&s=09', '_blank');
                 }}
               >
                 TWITTER

@@ -70,7 +70,7 @@ const footer = () => {
       <div className="text-center flex flex-col items-center justify-center pb-16 md:pb-6 lg:pb-24 xl:pb-28 2xl:pb-32 min-h-fit">
         {/* Original text with ShinyText */}
         <h2
-          className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-normal tracking-[1rem] md:tracking-[4rem] opacity-50 mb-0 select-none"
+          className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-normal tracking-[1rem] md:tracking-[4rem] opacity-50 mb-0 select-none"
           style={{
             fontFamily: '"Playfair", serif',
             fontOpticalSizing: 'auto',
@@ -89,7 +89,7 @@ const footer = () => {
 
         {/* Mirror/reflection text with ShinyText */}
         <h2
-          className="text-4xl md:text-7xl lg:text-9xl xl:text-[8rem] 2xl:text-[11rem] font-normal tracking-[1rem] md:tracking-[4rem] transform scale-y-[-1] mb-5 md:mt-2 lg:mt-4 xl:mt-5 2xl:mt-6 opacity-20 select-none"
+          className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-normal tracking-[1rem] md:tracking-[4rem] transform scale-y-[-1] mb-5 md:mt-2 lg:mt-4 xl:mt-5 2xl:mt-6 opacity-20 select-none"
           style={{
             fontFamily: '"Playfair", serif',
             fontOpticalSizing: 'auto',
