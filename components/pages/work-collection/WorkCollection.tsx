@@ -11,6 +11,7 @@ import {
   PhotographyProjects,
   BrandingProjects,
 } from './projects';
+import { ScrollAnimation, StaggerAnimation } from '@/components/animations';
 
 const WorkCollection = () => {
   const searchParams = useSearchParams();
@@ -58,27 +59,35 @@ const WorkCollection = () => {
       <div className="pt-24 md:pt-28 p-4 pb-10">
         <div className="max-w-7xl mx-auto rounded-3xl bg-[#1f1f1f]">
           {/* Back Button */}
-          <BackButton />
+          <ScrollAnimation direction="up" delay={0.1} duration={0.6}>
+            <BackButton />
+          </ScrollAnimation>
 
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl text-white font-bold mb-4 bricolage-grotesque">
-              My Work Collection
-            </h1>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">
-              Explore my diverse portfolio of creative projects across different
-              categories
-            </p>
-          </div>
+          <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-6xl text-white font-bold mb-4 bricolage-grotesque">
+                My Work Collection
+              </h1>
+              <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">
+                Explore my diverse portfolio of creative projects across
+                different categories
+              </p>
+            </div>
+          </ScrollAnimation>
 
           {/* Category Filter Buttons */}
-          <CategoryFilterButtons
-            activeCategory={activeCategory}
-            onCategoryChange={handleCategoryChange}
-          />
+          <ScrollAnimation direction="up" delay={0.3} duration={0.8}>
+            <CategoryFilterButtons
+              activeCategory={activeCategory}
+              onCategoryChange={handleCategoryChange}
+            />
+          </ScrollAnimation>
 
           {/* Projects Grid - Rendered based on active category */}
-          {renderProjects()}
+          <StaggerAnimation direction="up" staggerDelay={0.1} duration={0.6}>
+            {renderProjects()}
+          </StaggerAnimation>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { ProjectCardDetailed } from '@/components/ui';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
+import { StaggerAnimation } from '@/components/animations';
 
 // Graphic Design Projects Data
 const graphicDesignProjects = [
@@ -272,102 +273,104 @@ const GraphicDesignProjects = () => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-        {graphicDesignProjects.map((item) => (
-          <div
-            key={item.id}
-            className="rounded-3xl p-4 md:w-[400px] w-full flex flex-col h-[500px] bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
-            onClick={() => openModal(item)}
-          >
-            {/* Top Content Area - Large media container (60-70% of card height) */}
-            <div className="rounded-2xl h-[300px] w-full mb-4 flex items-center justify-center relative overflow-hidden">
-              {item.type === 'single' ? (
-                <img
-                  src={item.image}
-                  alt={`Graphic Design ${item.id}`}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              ) : (
-                <ImageCarousel
-                  images={item.images!}
-                  onClick={() => openModal(item)}
-                />
-              )}
-            </div>
+      <StaggerAnimation direction="up" staggerDelay={0.1} duration={0.6}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          {graphicDesignProjects.map((item) => (
+            <div
+              key={item.id}
+              className="rounded-3xl p-4 md:w-[400px] w-full flex flex-col h-[500px] bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => openModal(item)}
+            >
+              {/* Top Content Area - Large media container (60-70% of card height) */}
+              <div className="rounded-2xl h-[300px] w-full mb-4 flex items-center justify-center relative overflow-hidden">
+                {item.type === 'single' ? (
+                  <img
+                    src={item.image}
+                    alt={`Graphic Design ${item.id}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                ) : (
+                  <ImageCarousel
+                    images={item.images!}
+                    onClick={() => openModal(item)}
+                  />
+                )}
+              </div>
 
-            {/* Title and Year Section */}
-            <div className="flex justify-between items-center mb-4">
-              <h1 className="text-xl font-bold text-[#ffffff] bricolage-grotesque">
-                {item.title}
-              </h1>
-              <p className="text-sm text-[#ffffff]/50 bricolage-grotesque">
-                {item.year}
-              </p>
-            </div>
+              {/* Title and Year Section */}
+              <div className="flex justify-between items-center mb-4">
+                <h1 className="text-xl font-bold text-[#ffffff] bricolage-grotesque">
+                  {item.title}
+                </h1>
+                <p className="text-sm text-[#ffffff]/50 bricolage-grotesque">
+                  {item.year}
+                </p>
+              </div>
 
-            {/* Tags Section */}
-            <div className="flex gap-2 flex-wrap mb-4">
-              {item.tags.map((tag, index) => (
-                <div
-                  key={index}
-                  className="text-white/50 px-3 py-1 rounded-full text-sm md:text-[0.6rem] bricolage-grotesque bg-white/10"
-                >
-                  {tag}
-                </div>
-              ))}
-            </div>
+              {/* Tags Section */}
+              <div className="flex gap-2 flex-wrap mb-4">
+                {item.tags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className="text-white/50 px-3 py-1 rounded-full text-sm md:text-[0.6rem] bricolage-grotesque bg-white/10"
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
 
-            {/* View Project Button */}
-            <div className="flex gap-3 lg:flex-col md:flex-row flex-col">
-              <GlareHover
-                width="100%"
-                height="48px"
-                background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
-                borderRadius="16px"
-                borderColor="rgba(255, 255, 255, 0.2)"
-                glareColor="#ffffff"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={800}
-                playOnce={false}
-                style={{
-                  backdropFilter: 'blur(5px) saturate(120%)',
-                  WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-                }}
-                onClick={() => {
-                  openModal(item);
-                }}
-              >
-                <button
-                  className="px-6 py-3 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
+              {/* View Project Button */}
+              <div className="flex gap-3 lg:flex-col md:flex-row flex-col">
+                <GlareHover
+                  width="100%"
+                  height="48px"
+                  background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+                  borderRadius="16px"
+                  borderColor="rgba(255, 255, 255, 0.2)"
+                  glareColor="#ffffff"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
                   style={{
-                    background: 'transparent',
-                    border: 'none',
-                    borderRadius: '16px',
-                    color: '#F5EFF7',
-                    fontFamily: 'Sora, sans-serif',
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    backdropFilter: 'blur(5px) saturate(120%)',
+                    WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+                  }}
+                  onClick={() => {
+                    openModal(item);
                   }}
                 >
-                  <ShinyText
-                    text="View Project"
-                    disabled={false}
-                    speed={2}
-                    className="text-white font-medium"
-                  />
-                </button>
-              </GlareHover>
+                  <button
+                    className="px-6 py-3 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      borderRadius: '16px',
+                      color: '#F5EFF7',
+                      fontFamily: 'Sora, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: '500',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <ShinyText
+                      text="View Project"
+                      disabled={false}
+                      speed={2}
+                      className="text-white font-medium"
+                    />
+                  </button>
+                </GlareHover>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </StaggerAnimation>
 
       <LightboxModal
         isOpen={isModalOpen}

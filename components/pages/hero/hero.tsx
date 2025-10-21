@@ -4,6 +4,8 @@ import MobileNavbar from '@/components/navigation/mobile-navbar';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
 import { MorphingText } from '@/components/ui/morphing-text';
+import { ScrollAnimation } from '@/components/animations';
+import { scrollToElement } from '@/lib/scrollUtils';
 
 const Hero = () => {
   return (
@@ -43,127 +45,115 @@ const Hero = () => {
           {/* Main Content Wrapper */}
           <div className="flex flex-col justify-between h-full gap-[17rem]">
             {/* First Section - UI/UX Badge and Description */}
-            <div className="flex flex-col">
-              {/* Top Section - Skill Badge */}
-              <div className="flex mb-6 items-start">
-                <div
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    backdropFilter: 'blur(5px) saturate(120%)',
-                    WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-                  }}
-                >
-                  <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center">
+            <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+              <div className="flex flex-col">
+                {/* Top Section - Skill Badge */}
+                <div className="flex mb-6 items-start">
+                  <div
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(5px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+                    }}
+                  >
+                    <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center">
+                      <ShinyText
+                        text="●"
+                        disabled={false}
+                        speed={2}
+                        className="text-white text-xs"
+                      />
+                    </div>
                     <ShinyText
-                      text="●"
+                      text="Ui/Ux & Frontend Engineer"
                       disabled={false}
                       speed={2}
-                      className="text-white text-xs"
+                      className="text-white/50 text-sm font-light"
                     />
                   </div>
-                  <ShinyText
-                    text="Ui/Ux & Frontend Engineer"
-                    disabled={false}
-                    speed={2}
-                    className="text-white/50 text-sm font-light"
-                  />
+                </div>
+
+                {/* Description Text */}
+                <div className="mb-12">
+                  <p className="text-white/50 text-xl font-light leading-relaxed text-left">
+                    A Visual Designer And Web Developer Crafting Digital Stories
+                  </p>
                 </div>
               </div>
-
-              {/* Description Text */}
-              <div className="mb-12">
-                <p className="text-white/50 text-xl font-light leading-relaxed text-left">
-                  A Visual Designer And Web Developer Crafting Digital Stories
-                </p>
-              </div>
-            </div>
+            </ScrollAnimation>
 
             {/* Second Section - Name and Button */}
-            <div className="flex flex-col">
-              {/* Name Text */}
-              <div className="mb-6">
-                <h1 className="text-white font-light leading-tight aboreto-regular ">
-                  <span className="block text-2xl mb-2 text-white/50">
-                    HI I'M
-                  </span>
-                  <span className="block text-[1rem] font-medium tracking-wide">
-                    <MorphingText
-                      texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
-                      className="text-white text-3xl font-medium tracking-wide"
-                    />
-                  </span>
-                </h1>
-              </div>
+            <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+              <div className="flex flex-col">
+                {/* Name Text */}
+                <div className="mb-6">
+                  <h1 className="text-white font-light leading-tight aboreto-regular ">
+                    <span className="block text-2xl mb-2 text-white/50">
+                      HI I'M
+                    </span>
+                    <span className="block text-[1rem] font-medium tracking-wide">
+                      <MorphingText
+                        texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
+                        className="text-white text-3xl font-medium tracking-wide"
+                      />
+                    </span>
+                  </h1>
+                </div>
 
-              {/* View Projects Button - Bottom Center */}
-              <div className="flex justify-center">
-                <GlareHover
-                  width="100%"
-                  height="60px"
-                  background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
-                  borderRadius="16px"
-                  borderColor="rgba(255, 255, 255, 0.2)"
-                  glareColor="#ffffff"
-                  glareOpacity={0.3}
-                  glareAngle={-30}
-                  glareSize={300}
-                  transitionDuration={800}
-                  playOnce={false}
-                  className="w-full"
-                  style={{
-                    backdropFilter: 'blur(5px) saturate(120%)',
-                    WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-                  }}
-                  onClick={() => {
-                    // Use a more reliable approach with multiple attempts
-                    const scrollToWork = () => {
-                      const workSection = document.getElementById('work');
-                      if (workSection) {
-                        workSection.scrollIntoView({
-                          behavior: 'smooth',
-                          block: 'start',
-                        });
-                        return true;
-                      }
-                      return false;
-                    };
-
-                    // Try immediately
-                    if (!scrollToWork()) {
-                      // If not found, try again after a short delay
-                      setTimeout(() => {
-                        if (!scrollToWork()) {
-                          // Final fallback: scroll down by viewport height
+                {/* View Projects Button - Bottom Center */}
+                <div className="flex justify-center">
+                  <GlareHover
+                    width="100%"
+                    height="60px"
+                    background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+                    borderRadius="16px"
+                    borderColor="rgba(255, 255, 255, 0.2)"
+                    glareColor="#ffffff"
+                    glareOpacity={0.3}
+                    glareAngle={-30}
+                    glareSize={300}
+                    transitionDuration={800}
+                    playOnce={false}
+                    className="w-full"
+                    style={{
+                      backdropFilter: 'blur(5px) saturate(120%)',
+                      WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+                    }}
+                    onClick={() => {
+                      // Use improved scroll utility
+                      if (!scrollToElement('work')) {
+                        // Fallback: scroll down by viewport height
+                        setTimeout(() => {
                           window.scrollTo({
                             top: window.scrollY + window.innerHeight,
                             behavior: 'smooth',
                           });
-                        }
-                      }, 200);
-                    }
-                  }}
-                >
-                  <button
-                    className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none"
-                    style={{
-                      background: 'transparent',
-                      border: 'none',
-                      borderRadius: '16px',
+                        }, 200);
+                      }
                     }}
                   >
-                    <ShinyText
-                      text="View Projects"
-                      disabled={false}
-                      speed={2}
-                      className="text-white font-sora text-xl font-normal"
-                    />
-                  </button>
-                </GlareHover>
+                    <button
+                      className="px-8 py-4 w-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none"
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        borderRadius: '16px',
+                      }}
+                    >
+                      <ShinyText
+                        text="View Projects"
+                        disabled={false}
+                        speed={2}
+                        className="text-white font-sora text-xl font-normal"
+                      />
+                    </button>
+                  </GlareHover>
+                </div>
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </div>
@@ -203,136 +193,124 @@ const Hero = () => {
           {/* Main Content Container */}
 
           {/* Top Section - Skill Tag and Description */}
-          <div className="flex flex-row justify-between items-start mt-5">
-            {/* Skill Tag */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full w-fit"
-              style={{
-                background:
-                  'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(5px) saturate(120%)',
-                WebkitBackdropFilter: 'blur(0px) saturate(10%)',
-              }}
-            >
-              <div className="w-2 h-2 bg-[#ffffff] rounded-full flex items-center justify-center">
-                <ShinyText
-                  text="●"
-                  disabled={false}
-                  speed={2}
-                  className="text-white text-xs"
-                />
-              </div>
-              <ShinyText
-                text="UI/UX & Frontend Engineer"
-                disabled={false}
-                speed={2}
-                className="text-white/50 text-sm font-light"
-              />
-            </div>
-
-            {/* Description */}
-            <p className="text-white/50 text-xl font-light leading-relaxed max-w-md text-right">
-              A Visual Designer And Web Developer
-              <br />
-              Crafting Digital Stories
-            </p>
-          </div>
-
-          {/* Bottom Section - Main Heading and Button */}
-          <div className="flex flex-row justify-between w-full items-end">
-            {/* Main Heading */}
-            <div className="flex-shrink-0">
-              <h1 className="text-white text-7xl aboreto-regular font-light leading-tight">
-                <span className="block text-4xl aboreto-regular mb-2 text-white/50">
-                  HI I'M
-                </span>
-                <span className="block text-6xl aboreto-regular tracking-wide whitespace-nowrap">
-                  <MorphingText
-                    texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
-                    className="text-white text-6xl aboreto-regular tracking-wide whitespace-nowrap"
-                  />
-                </span>
-              </h1>
-            </div>
-
-            {/* View Projects Button */}
-            <div className="flex-shrink-0">
-              <GlareHover
-                width="12rem"
-                height="3rem"
-                background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
-                borderRadius="16px"
-                borderColor="rgba(255, 255, 255, 0.2)"
-                glareColor="#ffffff"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={800}
-                playOnce={false}
+          <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+            <div className="flex flex-row justify-between items-start mt-5">
+              {/* Skill Tag */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full w-fit"
                 style={{
+                  background:
+                    'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
                   backdropFilter: 'blur(5px) saturate(120%)',
                   WebkitBackdropFilter: 'blur(0px) saturate(10%)',
                 }}
-                onClick={() => {
-                  // Use a more reliable approach with multiple attempts
-                  const scrollToWork = () => {
-                    const workSection = document.getElementById('work');
-                    if (workSection) {
-                      workSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start',
-                      });
-                      return true;
-                    }
-                    return false;
-                  };
+              >
+                <div className="w-2 h-2 bg-[#ffffff] rounded-full flex items-center justify-center">
+                  <ShinyText
+                    text="●"
+                    disabled={false}
+                    speed={2}
+                    className="text-white text-xs"
+                  />
+                </div>
+                <ShinyText
+                  text="UI/UX & Frontend Engineer"
+                  disabled={false}
+                  speed={2}
+                  className="text-white/50 text-sm font-light"
+                />
+              </div>
 
-                  // Try immediately
-                  if (!scrollToWork()) {
-                    // If not found, try again after a short delay
-                    setTimeout(() => {
-                      if (!scrollToWork()) {
-                        // Final fallback: scroll down by viewport height
+              {/* Description */}
+              <p className="text-white/50 text-xl font-light leading-relaxed max-w-md text-right">
+                A Visual Designer And Web Developer
+                <br />
+                Crafting Digital Stories
+              </p>
+            </div>
+          </ScrollAnimation>
+
+          {/* Bottom Section - Main Heading and Button */}
+          <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+            <div className="flex flex-row justify-between w-full items-end">
+              {/* Main Heading */}
+              <div className="flex-shrink-0">
+                <h1 className="text-white text-7xl aboreto-regular font-light leading-tight">
+                  <span className="block text-4xl aboreto-regular mb-2 text-white/50">
+                    HI I'M
+                  </span>
+                  <span className="block text-6xl aboreto-regular tracking-wide whitespace-nowrap">
+                    <MorphingText
+                      texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
+                      className="text-white text-6xl aboreto-regular tracking-wide whitespace-nowrap"
+                    />
+                  </span>
+                </h1>
+              </div>
+
+              {/* View Projects Button */}
+              <div className="flex-shrink-0">
+                <GlareHover
+                  width="12rem"
+                  height="3rem"
+                  background="linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)"
+                  borderRadius="16px"
+                  borderColor="rgba(255, 255, 255, 0.2)"
+                  glareColor="#ffffff"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                  style={{
+                    backdropFilter: 'blur(5px) saturate(120%)',
+                    WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+                  }}
+                  onClick={() => {
+                    // Use improved scroll utility
+                    if (!scrollToElement('work')) {
+                      // Fallback: scroll down by viewport height
+                      setTimeout(() => {
                         window.scrollTo({
                           top: window.scrollY + window.innerHeight,
                           behavior: 'smooth',
                         });
-                      }
-                    }, 200);
-                  }
-                }}
-              >
-                <button
-                  className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center"
-                  style={{
-                    width: '12rem',
-                    height: '3rem',
-                    margin: 0,
-                    background: 'transparent',
-                    border: 'none',
-                    borderRadius: '16px',
-                    color: '#F5EFF7',
-                    fontFamily: 'Sora, sans-serif',
-                    fontSize: '16px',
-                    fontWeight: '400',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                      }, 200);
+                    }
                   }}
                 >
-                  <ShinyText
-                    text="View Projects"
-                    disabled={false}
-                    speed={3}
-                    className="text-white font-sora text-base font-normal"
-                  />
-                </button>
-              </GlareHover>
+                  <button
+                    className="px-8 py-4 rounded-full text-white font-normal transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center"
+                    style={{
+                      width: '12rem',
+                      height: '3rem',
+                      margin: 0,
+                      background: 'transparent',
+                      border: 'none',
+                      borderRadius: '16px',
+                      color: '#F5EFF7',
+                      fontFamily: 'Sora, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: '400',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <ShinyText
+                      text="View Projects"
+                      disabled={false}
+                      speed={3}
+                      className="text-white font-sora text-base font-normal"
+                    />
+                  </button>
+                </GlareHover>
+              </div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </div>

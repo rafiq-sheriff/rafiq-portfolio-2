@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { StaggerAnimation } from '@/components/animations';
 
 // Photography Images Data
 const photographyImages = [
@@ -263,29 +264,31 @@ const PhotographyProjects = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 lg:gap-4 ">
-        {photographyImages.map((item) => (
-          <div
-            key={item.id}
-            className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
-            style={{ height: '300px' }}
-            onClick={() => openModal(item)}
-          >
-            {item.type === 'single' ? (
-              <img
-                src={item.image}
-                alt={`Photography ${item.id}`}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <ImageCarousel
-                images={item.images!}
-                onClick={() => openModal(item)}
-              />
-            )}
-          </div>
-        ))}
-      </div>
+      <StaggerAnimation direction="up" staggerDelay={0.1} duration={0.6}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 lg:gap-4 ">
+          {photographyImages.map((item) => (
+            <div
+              key={item.id}
+              className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
+              style={{ height: '300px' }}
+              onClick={() => openModal(item)}
+            >
+              {item.type === 'single' ? (
+                <img
+                  src={item.image}
+                  alt={`Photography ${item.id}`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <ImageCarousel
+                  images={item.images!}
+                  onClick={() => openModal(item)}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </StaggerAnimation>
 
       <LightboxModal
         isOpen={isModalOpen}
