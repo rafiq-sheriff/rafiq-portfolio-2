@@ -342,7 +342,7 @@ const GraphicDesignProjects = () => {
                   }}
                 >
                   <button
-                    className="px-6 py-3 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
+                    className="px-6 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
                     style={{
                       background: 'transparent',
                       border: 'none',

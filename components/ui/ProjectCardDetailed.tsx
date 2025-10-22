@@ -57,7 +57,7 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
   return (
     <div
       className={`rounded-3xl p-4 md:w-[400px] w-full flex flex-col ${
-        compactLayout ? 'h-auto' : 'h-[500px]'
+        compactLayout ? 'h-auto' : 'h-[400px]'
       }`}
       style={cardStyles.cardContainer}
     >
@@ -112,7 +112,7 @@ const ProjectCardDetailed: React.FC<ProjectCardProps> = ({
             onClick={onViewProject}
           >
             <button
-              className="px-6 py-3 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
+              className="px-6 rounded-[1rem] flex-1 font-medium transition-all duration-300 hover:scale-105 bg-transparent border-none flex items-center justify-center w-full h-full text-lg"
               style={{
                 background: 'transparent',
                 border: 'none',
