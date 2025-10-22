@@ -278,7 +278,7 @@ const GraphicDesignProjects = () => {
           {graphicDesignProjects.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl p-4 md:w-[400px] w-full flex flex-col h-[500px] bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="rounded-3xl p-4 md:w-[400px] w-full flex flex-col h-[490px] bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() => openModal(item)}
             >
               {/* Top Content Area - Large media container (60-70% of card height) */}
