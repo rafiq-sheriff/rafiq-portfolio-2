@@ -4,6 +4,7 @@ import { StaggerAnimation } from '@/components/animations';
 // Project URLs mapping
 const projectUrls: { [key: string]: string } = {
   'A S CODELABS': 'https://ascodelabs.com/',
+  'BILLSHEET AI ': 'https://billsheetai.ascodelabs.com/',
   'A S UNIQUE HR': 'https://asuhr.ascodelabs.com/',
   'A S UNIQUE TRADERS': 'https://asuniquetraders.com/',
   'PERSONAL PORTFOLIO (old)': 'https://rafiq-sheriff-portfolio.vercel.app/',

@@ -5,6 +5,7 @@ import { ProjectCardDetailed } from '@/components/ui';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
 import { StaggerAnimation } from '@/components/animations';
+import { cardStyles } from '@/components/ui/card-styles';
 
 // Graphic Design Projects Data
 const graphicDesignProjects = [
@@ -312,7 +313,8 @@ const GraphicDesignProjects = () => {
                 {item.tags.map((tag, index) => (
                   <div
                     key={index}
-                    className="text-white/50 px-3 py-1 rounded-full text-sm md:text-[0.6rem] bricolage-grotesque bg-white/10"
+                    className="text-white/50 px-3 py-1 rounded-full text-sm md:text-[0.6rem] bricolage-grotesque"
+                    style={cardStyles.tag}
                   >
                     {tag}
                   </div>
