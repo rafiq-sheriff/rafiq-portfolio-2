@@ -10,7 +10,7 @@ const appDesignProjects = [
     image: '/videos/app-design/mobile-app.mp4',
     type: 'video' as const,
     tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-    description: 'Secure and intuitive banking experience',
+    description: 'Convert bills into balance sheet',
   },
 ];
 
@@ -27,7 +27,12 @@ const AppDesignProjects = () => {
             mediaType={project.type}
             mediaSrc={project.image}
             description={project.description}
-            onViewProject={() => console.log(`View ${project.title}`)}
+            onViewProject={() =>
+              window.open(
+                'https://billsheetai-app.ascodelabs.com/app',
+                '_blank'
+              )
+            }
             onLiveDemo={() => console.log(`Live demo ${project.title}`)}
             className="h-auto"
           />
