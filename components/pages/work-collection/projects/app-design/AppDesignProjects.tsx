@@ -26,7 +26,6 @@ const AppDesignProjects = () => {
             tags={project.tags}
             mediaType={project.type}
             mediaSrc={project.image}
-            description={project.description}
             onViewProject={() =>
               window.open(
                 'https://billsheetai-app.ascodelabs.com/app',

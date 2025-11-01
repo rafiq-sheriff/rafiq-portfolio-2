@@ -96,7 +96,6 @@ const WebDesignProjects = () => {
             tags={project.tags}
             mediaType={project.type}
             mediaSrc={project.image}
-            description={project.description}
             onViewProject={() => handleViewProject(project.title)}
             onLiveDemo={() => console.log(`Live demo ${project.title}`)}
             className="h-auto"
