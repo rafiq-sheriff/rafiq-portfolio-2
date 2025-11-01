@@ -1,5 +1,6 @@
 'use client';
 import { useRouter, usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
 import { downloadCV } from '@/lib/downloadUtils';
@@ -7,6 +8,7 @@ import { downloadCV } from '@/lib/downloadUtils';
 const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const [isPastHero, setIsPastHero] = useState(false);
 
   const handleLogoClick = () => {
     if (pathname === '/work-collection') {
@@ -34,6 +36,28 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (pathname === '/') {
+        const heroSection = document.getElementById('hero');
+        if (heroSection) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          setIsPastHero(window.scrollY > heroBottom);
+        }
+      }
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
+
+  // Determine if navbar should be full opacity
+  const isFullOpacity = pathname !== '/' || isPastHero;
+
   return (
     <div className="flex items-center justify-between w-full ">
       <h1
@@ -52,31 +76,41 @@ const Navbar = () => {
       </h1>
       <div className="flex items-center gap-5">
         <button
-          className="text-white/50 hover:text-white transition-colors"
+          className={`${
+            isFullOpacity ? 'text-white' : 'text-white/50'
+          } hover:text-white transition-colors`}
           onClick={() => handleNavClick('hero')}
         >
           Home
         </button>
         <button
-          className="text-white/50 hover:text-white transition-colors"
+          className={`${
+            isFullOpacity ? 'text-white' : 'text-white/50'
+          } hover:text-white transition-colors`}
           onClick={() => handleNavClick('about')}
         >
           About
         </button>
         <button
-          className="text-white/50 hover:text-white transition-colors"
+          className={`${
+            isFullOpacity ? 'text-white' : 'text-white/50'
+          } hover:text-white transition-colors`}
           onClick={() => handleNavClick('work')}
         >
           Work
         </button>
         <button
-          className="text-white/50 hover:text-white transition-colors"
+          className={`${
+            isFullOpacity ? 'text-white' : 'text-white/50'
+          } hover:text-white transition-colors`}
           onClick={() => handleNavClick('experience')}
         >
           Process
         </button>
         <button
-          className="text-white/50 hover:text-white transition-colors"
+          className={`${
+            isFullOpacity ? 'text-white' : 'text-white/50'
+          } hover:text-white transition-colors`}
           onClick={() => handleNavClick('contact')}
         >
           Contact

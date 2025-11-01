@@ -143,7 +143,7 @@ const MobileNavbar = () => {
             </div>
 
             {/* Enhanced main menu area with glass morphism */}
-            <div className="flex-1 px-6 py-8">
+            <div className="flex-1 px-6 py-8 bg-[#1E1E1E]/60 backdrop-blur-sm">
               {/* Navigation Items with enhanced styling */}
               <div className="space-y-3">
                 {navItems.map((item, index) => (

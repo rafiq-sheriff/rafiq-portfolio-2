@@ -19,10 +19,10 @@ const Hero = () => {
             className="rounded-2xl px-4 py-3"
             style={{
               background:
-                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              'rgba(84,84,84,0.38)',
+              border: '1px solid rgba(255,255,255,0.10)',
               backdropFilter: 'blur(5px) saturate(120%)',
-              WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+              WebkitBackdropFilter: 'blur(0px) saturate(120%)',
             }}
           >
             <MobileNavbar />
@@ -178,10 +178,10 @@ const Hero = () => {
             className="p-2 rounded-3xl"
             style={{
               background:
-                'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(42,42,42,0.7) 100%)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+                'rgba(84,84,84,0.38)',
+              border: '1px solid rgba(255,255,255,0.10)',
               backdropFilter: 'blur(5px) saturate(120%)',
-              WebkitBackdropFilter: 'blur(0px) saturate(10%)',
+              WebkitBackdropFilter: 'blur(0px) saturate(120%)',
             }}
           >
             <Navbar />
