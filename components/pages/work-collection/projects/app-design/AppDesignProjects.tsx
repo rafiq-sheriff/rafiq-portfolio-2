@@ -28,7 +28,7 @@ const AppDesignProjects = () => {
             mediaSrc={project.image}
             onViewProject={() =>
               window.open(
-                'https://billsheetai-app.ascodelabs.com/app',
+                'https://app.billsheetai.com',
                 '_blank'
               )
             }

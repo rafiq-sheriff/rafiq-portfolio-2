@@ -4,8 +4,28 @@ import { StaggerAnimation } from '@/components/animations';
 // Branding Projects Data
 const brandingProjects = [
   {
+    id: 11,
+    title: 'HELIX',
+    year: '2025',
+    image: '/images/work-collection/logo-design/helix.png',
+    type: 'image' as const,
+    tags: ['Figma'],
+    behanceUrl:
+      '',
+  },
+  {
+    id: 12,
+    title: 'A S UNIQUE GROUP',
+    year: '2025',
+    image: '/images/work-collection/logo-design/asug1.png',
+    type: 'image' as const,
+    tags: ['Figma'],
+    behanceUrl:
+      'https://www.behance.net/gallery/238027309/A-S-UNIQUE-GROUP-LOGO-DESIGN',
+  },
+  {
     id: 13,
-    title: 'A S UNIQUE FOOD LOGO',
+    title: 'A S UNIQUE FOOD',
     year: '2025',
     image: '/images/work-collection/logo-design/as.png',
     type: 'image' as const,

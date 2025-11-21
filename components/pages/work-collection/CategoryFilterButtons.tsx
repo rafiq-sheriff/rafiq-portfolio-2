@@ -5,8 +5,9 @@ import { StaggerAnimation } from '@/components/animations';
 const categories = [
   { id: 'web-design', name: 'Web Design & Development', isDefault: true },
   { id: 'app-design', name: 'App Design' },
-  { id: 'graphic-design', name: 'Graphic Design' },
   { id: 'branding', name: 'Logo Design & Branding' },
+  { id: 'graphic-design', name: 'Graphic Design' },
+
   { id: 'photography', name: 'Photography' },
 ];
 
