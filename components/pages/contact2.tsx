@@ -140,7 +140,7 @@ const Contact2 = () => {
                 INSTAGRAM
               </button>
 
-                {/* twitter - center right */}
+                {/* github - center right */}
                 <button
                   className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white hover:text-[#1f1f1f] uppercase tracking-wide"
                   style={{
@@ -155,10 +155,10 @@ const Contact2 = () => {
                     whiteSpace: 'nowrap',
                   }}
                   onClick={() => {
-                    window.open('https://x.com/RafiqSheriff?t=kTtCEeaX78JSKrFElEPuCg&s=09', '_blank');
+                    window.open('https://github.com/rafiq-sheriff', '_blank');
                   }}
                 >
-                  TWITTER
+                  GITHUB
                 </button>
 
               {/* BEHANCE - bottom left */}
@@ -278,7 +278,7 @@ const Contact2 = () => {
                 INSTAGRAM
               </button>
 
-              {/* TWITTER Button - Mid Right */}
+              {/* GITHUB Button - Mid Right */}
               <button
                 className="absolute flex items-center justify-center bg-transparent text-white font-medium hover:bg-white border-[1px] border-white  hover:text-[#1f1f1f] uppercase tracking-wide"
                 style={{
@@ -294,10 +294,10 @@ const Contact2 = () => {
                   whiteSpace: 'nowrap',
                 }}
                 onClick={() => {
-                  window.open('https://x.com/RafiqSheriff?t=kTtCEeaX78JSKrFElEPuCg&s=09', '_blank');
+                  window.open('https://github.com/rafiq-sheriff', '_blank');
                 }}
               >
-                TWITTER
+                GITHUB
               </button>
 
               {/* BEHANCE Button - Bottom Left */}

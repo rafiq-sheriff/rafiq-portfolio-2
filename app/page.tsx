@@ -14,7 +14,7 @@ export default function Portfolio() {
     { name: 'Canva', level: 90 },
     { name: 'Photoshop', level: 50 },
     { name: 'Illustrator', level: 50 },
-    { name: 'Lightroom', level: 90 },
+    { name: 'Affinity', level: 90 },
   ];
 
   const developmentSkills = [
@@ -25,6 +25,12 @@ export default function Portfolio() {
     { name: 'Tailwind', level: 70 },
     { name: 'Wix', level: 90 },
     { name: 'Framer', level: 70 },
+  ];
+
+  const dataSkills = [
+    { name: 'SQL', level: 70 },
+    { name: 'Microsoft Excel', level: 80 },
+    { name: 'Tableau', level: 80 },
   ];
 
   const otherSkills = [
@@ -63,6 +69,7 @@ export default function Portfolio() {
       <About
         designSkills={designSkills}
         developmentSkills={developmentSkills}
+        dataSkills={dataSkills}
         otherSkills={otherSkills}
       />
 

@@ -11,7 +11,7 @@ const brandingProjects = [
     type: 'image' as const,
     tags: ['Figma'],
     behanceUrl:
-      '',
+      'https://www.behance.net/gallery/241290739/HELIX-AI-LOGO-DESIGN',
   },
   {
     id: 12,
@@ -22,6 +22,15 @@ const brandingProjects = [
     tags: ['Figma'],
     behanceUrl:
       'https://www.behance.net/gallery/238027309/A-S-UNIQUE-GROUP-LOGO-DESIGN',
+  },
+  {
+    id: 15,
+    title: 'D HEALTH',
+    year: '2025',
+    image: '/images/work-collection/logo-design/d-health.png',
+    type: 'image' as const,
+    tags: ['Figma'],
+    behanceUrl: '',
   },
   {
     id: 13,
@@ -43,12 +52,13 @@ const brandingProjects = [
     behanceUrl:
       'https://www.behance.net/gallery/227507339/A-S-UNIQUE-FOOD-Logo-Visual-Identity',
   },
+
 ];
 
 const BrandingProjects = () => {
   return (
     <StaggerAnimation direction="up" staggerDelay={0.2} duration={0.6}>
-      <div className="flex flex-col md:flex-row justify-start items-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
         {brandingProjects.map((project) => (
           <ProjectCardDetailed
             key={project.id}

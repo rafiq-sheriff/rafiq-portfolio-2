@@ -22,27 +22,68 @@ const Work = () => {
         </ScrollAnimation>
         {/* Mobile-first layout: Single column on mobile, grid on desktop */}
         <StaggerAnimation direction="up" staggerDelay={0.1} duration={0.6}>
-          <div className="flex flex-col gap-8 md:gap-8 md:grid md:grid-cols-2 md:grid-rows-3">
-            {/* Mobile App Design - Full width on mobile, half width on desktop */}
+          <div className="flex flex-col gap-8 md:gap-8 md:grid md:grid-cols-2 md:grid-rows-4">
+            {/* Web Design - Full width on all screens - FIRST COLUMN */}
+            <WorkCard
+              title="Web"
+              subtitle="Design & Development"
+              description="Responsive, Engaging"
+              mediaType="image"
+              mediaSrc="/images/work-collection/web/ASCODELABS.png"
+              className="md:col-span-2 md:row-span-1"
+              onClick={() =>
+                (window.location.href = '/work-collection?category=web-design')
+              }
+            />
+
+            {/* Dashboards - Half width on desktop - SECOND COLUMN LEFT */}
+            <WorkCard
+              title="Data"
+              subtitle="Visualization & Analytics"
+              description="Data-driven, Intuitive"
+              mediaType="image"
+              mediaSrc="/images/work-collection/dashboards/d-health.png"
+              className="md:col-span-1 md:row-span-1"
+              onClick={() =>
+                (window.location.href = '/work-collection?category=dashboards')
+              }
+            />
+
+            {/* Logo Design - Half width on desktop - SECOND COLUMN RIGHT */}
+            <WorkCard
+              title="Logo"
+              subtitle="Design & Branding"
+              description="Memorable, Distinctive"
+              // mediaType="color"
+              // backgroundColor="#44A54A"
+              mediaType="image"
+              mediaSrc="/images/work-collection/logo-design/logo.png"
+              className="md:col-span-1 md:row-span-1"
+              onClick={() =>
+                (window.location.href = '/work-collection?category=branding')
+              }
+            />
+
+            {/* Mobile App Design - Full width on all screens - THIRD COLUMN */}
             <WorkCard
               title="Mobile App"
               subtitle="Design"
               description="User-centric, Seamless"
-              mediaType="video"
-              mediaSrc="/videos/app-design/mobile-app.mp4"
-              className="md:col-span-1 md:row-span-1"
+              mediaType="image"
+              mediaSrc="/images/work-collection/app-design/ap.png"
+              className="md:col-span-2 md:row-span-1"
               onClick={() =>
                 (window.location.href = '/work-collection?category=app-design')
               }
             />
 
-            {/* Social Media Design - Full width on mobile, half width on desktop (moved here) */}
+            {/* Social Media Design - Half width on desktop - FOURTH COLUMN LEFT */}
             <WorkCard
               title="Social Media"
               subtitle="& Graphic Design"
               description="Visual, Impactful"
-              mediaType="video"
-              mediaSrc="/videos/graphic-design/graphic-design.mp4"
+              mediaType="image"
+              mediaSrc="/images/work-collection/graphic-design/gd.png"
               className="md:col-span-1 md:row-span-1"
               onClick={() =>
                 (window.location.href =
@@ -50,41 +91,13 @@ const Work = () => {
               }
             />
 
-            {/* Web Design - Full width on all screens */}
-            <WorkCard
-              title="Web"
-              subtitle="Design & Development"
-              description="Responsive, Engaging"
-              mediaType="video"
-              mediaSrc="/videos/web/web1.mp4"
-              className="md:col-span-2 md:row-span-1"
-              onClick={() =>
-                (window.location.href = '/work-collection?category=web-design')
-              }
-            />
-
-            {/* Logo Design - Full width on mobile, half width on desktop (moved here) */}
-            <WorkCard
-              title="Logo"
-              subtitle="Design & Branding"
-              description="Memorable, Distinctive"
-              // mediaType="color"
-              // backgroundColor="#44A54A"
-              mediaType="video"
-              mediaSrc="/videos/logo/Untitled%20design.mp4"
-              className="md:col-span-1 md:row-span-1"
-              onClick={() =>
-                (window.location.href = '/work-collection?category=branding')
-              }
-            />
-
-            {/* Mobile Photography - Full width on mobile, half width on desktop */}
+            {/* Mobile Photography - Half width on desktop - FOURTH COLUMN RIGHT */}
             <WorkCard
               title="Mobile"
               subtitle="Photography"
               description="Creative, Expressive"
-              mediaType="video"
-              mediaSrc="/videos/photography/Photograpgy.mp4"
+              mediaType="image"
+              mediaSrc="/images/work-collection/photography/mp.png"
               className="md:col-span-1 md:row-span-1"
               onClick={() =>
                 (window.location.href = '/work-collection?category=photography')

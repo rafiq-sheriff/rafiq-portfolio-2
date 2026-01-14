@@ -6,8 +6,8 @@ const categories = [
   { id: 'web-design', name: 'Web Design & Development', isDefault: true },
   { id: 'app-design', name: 'App Design' },
   { id: 'branding', name: 'Logo Design & Branding' },
+  { id: 'dashboards', name: 'Dashboards' },
   { id: 'graphic-design', name: 'Graphic Design' },
-
   { id: 'photography', name: 'Photography' },
 ];
 

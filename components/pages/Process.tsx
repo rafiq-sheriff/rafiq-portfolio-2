@@ -9,10 +9,11 @@ const experiences = [
     location: 'Chennai, Tamil Nadu',
     period: 'MAR 2025 - Present',
     description:
-      'I’m a Frontend Engineer passionate about creating modern, responsive, and visually engaging web experiences with clean, scalable, and efficient code.',
+      'I work as a Frontend Engineer and UI/UX Designer, building intuitive, responsive, and visually polished digital experiences while translating complex requirements into user-friendly solutions.',
     achievements: [
-      'Translating UI/UX designs into functional, interactive, and visually polished interfaces.',
-      'Developing high-performance web applications using React, Tailwind CSS, HTML, and CSS.',
+      'Designing and implementing UI/UX workflows, wireframes, and high-fidelity interfaces focused on usability and clarity.',
+      'Developing modern, high-performance frontend applications using React, Tailwind CSS, HTML, and CSS.',
+      'Creating data-driven dashboards and visual reports using SQL and Tableau to deliver actionable insights and support business decision-making.',
       'Delivering efficient, end-to-end digital solutions with precision and creativity in a fast-paced startup environment.',
     ],
   },

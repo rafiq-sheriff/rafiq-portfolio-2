@@ -8,7 +8,7 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandBehance,
-  IconBrandTwitter,
+  IconBrandGithub,
 } from '@tabler/icons-react';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
@@ -313,10 +313,10 @@ const MobileNavbar = () => {
                     />
                   </a>
                   <a
-                    href="https://x.com/RafiqSheriff?t=kTtCEeaX78JSKrFElEPuCg&s=09"
+                    href="https://github.com/rafiq-sheriff"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="Twitter"
+                    aria-label="GitHub"
                     className="p-2 rounded-xl"
                     style={{
                       background:
@@ -326,7 +326,7 @@ const MobileNavbar = () => {
                       WebkitBackdropFilter: 'blur(8px) saturate(120%)',
                     }}
                   >
-                    <IconBrandTwitter
+                    <IconBrandGithub
                       size={35}
                       stroke={1.3}
                       className="text-white/80"

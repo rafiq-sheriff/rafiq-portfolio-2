@@ -10,6 +10,7 @@ import {
   GraphicDesignProjects,
   PhotographyProjects,
   BrandingProjects,
+  DashboardsProjects,
 } from './projects';
 import { ScrollAnimation, StaggerAnimation } from '@/components/animations';
 
@@ -45,6 +46,8 @@ const WorkCollection = () => {
         return <PhotographyProjects />;
       case 'branding':
         return <BrandingProjects />;
+      case 'dashboards':
+        return <DashboardsProjects />;
       default:
         return <WebDesignProjects />;
     }

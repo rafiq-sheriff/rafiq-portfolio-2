@@ -4,6 +4,7 @@ import { StaggerAnimation } from '@/components/animations';
 // Project URLs mapping
 const projectUrls: { [key: string]: string } = {
   'A S CODELABS': 'https://ascodelabs.com/',
+  'A S UNIQUE GROUP': 'https://asuniquegroup.com/',
   'HELIX AI': 'https://helix-ai.ascodelabs.com/',
   'BILLSHEET AI ': 'https://billsheetai.com/',
   'A S UNIQUE HR': 'https://asuhr.ascodelabs.com/',
@@ -17,61 +18,57 @@ const webDesignProjects = [
     id: 1,
     title: 'A S CODELABS',
     year: '2025',
-    image:
-      '/images/work-collection/web/ASCODELABS.png',
+    image: '/images/work-collection/web/ASCODELABS.png',
     type: 'image' as const,
     tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-
   },
   {
     id: 2,
     title: 'HELIX AI',
     year: '2025',
-    image:
-      '/images/work-collection/web/Helix.png',
+    image: '/images/work-collection/web/Helix.png',
     type: 'image' as const,
     tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-
   },
   {
     id: 3,
     title: 'BILLSHEET AI ',
     year: '2025',
-    image:
-      '/images/work-collection/web/BILLSHEETAI.png',
+    image: '/images/work-collection/web/BILLSHEETAI.png',
     type: 'image' as const,
     tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-
   },
   {
     id: 4,
-    title: 'A S UNIQUE HR',
+    title: 'A S UNIQUE GROUP',
     year: '2025',
-    image:
-      '/images/work-collection/web/ASUNIQUEHR.png',
+    image: '/images/work-collection/web/ASUNIQUEGROUP.png',
     type: 'image' as const,
-    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-
+    tags: ['Figma', 'React', 'Tailwind', 'Next.js'],
   },
   {
     id: 5,
-    title: 'A S UNIQUE TRADERS',
+    title: 'A S UNIQUE HR',
     year: '2025',
-    image:
-      '/images/work-collection/web/ASUNIQUETRADERS.png',
+    image: '/images/work-collection/web/ASUNIQUEHR.png',
     type: 'image' as const,
     tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-
   },
   {
     id: 6,
-    title: 'PERSONAL PORTFOLIO (old)',
+    title: 'A S UNIQUE TRADERS',
     year: '2025',
-    image:
-      '/images/work-collection/web/PORTFOLIOOLD.png',
+    image: '/images/work-collection/web/ASUNIQUETRADERS.png',
     type: 'image' as const,
     tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
-
+  },
+  {
+    id: 7,
+    title: 'PERSONAL PORTFOLIO (old)',
+    year: '2025',
+    image: '/images/work-collection/web/PORTFOLIOOLD.png',
+    type: 'image' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'OpenAI'],
   },
 ];
 

@@ -13,6 +13,7 @@ interface Skill {
 interface AboutProps {
   designSkills: Skill[];
   developmentSkills: Skill[];
+  dataSkills: Skill[];
   otherSkills: Skill[];
   gradientFrom?: string; // e.g. '#6EE7F9'
   gradientTo?: string; // e.g. '#9333EA'
@@ -21,6 +22,7 @@ interface AboutProps {
 export default function About({
   designSkills,
   developmentSkills,
+  dataSkills,
   otherSkills,
   gradientFrom,
   gradientTo,
@@ -37,7 +39,7 @@ export default function About({
   return (
     <div id="about" className=" bg-[#ffffff] pt-8 px-8  pb-12">
       {/* Intro block matching hero look */}
-      <div className="max-w-6xl mx-auto text-center mb-12">
+      <div className="max-w-7xl mx-auto text-center mb-12">
         <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
           <div
             className="flex flex-col gap-6 p-4 md:p-9 rounded-3xl mb-12"
@@ -51,18 +53,10 @@ export default function About({
             </h2>
             <div className="flex flex-col gap-4 ">
               <p className="text-lg md:text-2xl font-poppins font-light text-[#ffffff]/60 text-left">
-                I'm a Creative Visual Designer and Frontend Developer passionate
-                about crafting intuitive and visually engaging digital
-                experiences. I specialize in UI/UX design, app design, web
-                development, and frontend development, combining creativity with
-                functionality to bring ideas to life.
+              I’m a Creative Visual Designer and Frontend Developer focused on crafting intuitive, visually engaging, and user-centric digital experiences. My expertise spans UI/UX design, app and web design, and frontend development, where I blend modern design principles with functional, scalable solutions to bring ideas to life.
               </p>
               <p className="text-lg md:text-2xl font-poppins font-light text-[#ffffff]/60 text-left">
-                With expertise in graphic design, logo design, branding, and
-                photography, I create cohesive visuals that strengthen brand
-                identity and storytelling. My work blends design thinking,
-                modern tools, and a keen eye for detail to deliver experiences
-                that are both aesthetic and meaningful.
+              In addition to design and development, I work with SQL, Excel, and Tableau to analyze data and create meaningful visual insights. With a strong foundation in branding, graphic design, and visual storytelling, I deliver solutions that balance aesthetics, usability, and data ensuring every experience is both impactful and purposeful.
               </p>
             </div>
           </div>
@@ -98,6 +92,16 @@ export default function About({
             >
               <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
               <span className="text-[#ffffff]/60">UI/UX Designer</span>
+            </div>
+            <div
+              className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
+              style={{
+                backgroundImage:
+                  'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
+              }}
+            >
+              <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
+              <span className="text-[#ffffff]/60">Data Analyst</span>
             </div>
             <div
               className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
@@ -157,6 +161,32 @@ export default function About({
               </h3>
               <div className="space-y-3">
                 {developmentSkills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between"
+                  >
+                    <span className="text-[#1f1f1f]">{skill.name}</span>
+                    <div className="flex items-center gap-2">
+                      <ProgressBar
+                        level={skill.level}
+                        delay={index * 0.1}
+                        duration={1.2}
+                      />
+                      <span className="text-[#1f1f1f] text-sm w-8">
+                        {skill.level}%
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl text-[#1f1f1f] font-semibold mb-4 bricolage-grotesque">
+                Data
+              </h3>
+              <div className="space-y-3">
+                {dataSkills.map((skill, index) => (
                   <div
                     key={index}
                     className="flex items-center justify-between"
