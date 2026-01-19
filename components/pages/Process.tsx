@@ -7,7 +7,7 @@ const experiences = [
     title: 'Frontend Engineer',
     company: 'A S CODELABS',
     location: 'Chennai, Tamil Nadu',
-    period: 'MAR 2025 - Present',
+    period: 'AUG 2024 - Present',
     description:
       'I work as a Frontend Engineer and UI/UX Designer, building intuitive, responsive, and visually polished digital experiences while translating complex requirements into user-friendly solutions.',
     achievements: [
