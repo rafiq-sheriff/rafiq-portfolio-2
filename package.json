@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "scraper-server": "node scraper-server/index.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -27,7 +28,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.0.0",
-    "three": "^0.180.0"
+    "three": "^0.180.0",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "@types/matter-js": "^0.20.2",

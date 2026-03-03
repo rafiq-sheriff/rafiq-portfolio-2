@@ -272,7 +272,7 @@ const MobileNavbar = () => {
                     />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/rafiq-sheriff-2ab36b282/"
+                    href="https://www.linkedin.com/in/rafiq-sheriff"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="LinkedIn"

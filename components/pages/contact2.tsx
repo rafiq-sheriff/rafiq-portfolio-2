@@ -197,7 +197,7 @@ const Contact2 = () => {
                   whiteSpace: 'nowrap',
                 }}
                 onClick={() => {
-                  window.open('https://www.linkedin.com/in/rafiq-sheriff-2ab36b282/', '_blank');
+                  window.open('https://www.linkedin.com/in/rafiq-sheriff', '_blank');
                 }}
               >
                 LINKEDIN
@@ -336,7 +336,7 @@ const Contact2 = () => {
                   whiteSpace: 'nowrap',
                 }}
                 onClick={() => {
-                  window.open('https://www.linkedin.com/in/rafiq-sheriff-2ab36b282/', '_blank');
+                  window.open('https://www.linkedin.com/in/rafiq-sheriff', '_blank');
                 }}
               >
                 LINKEDIN

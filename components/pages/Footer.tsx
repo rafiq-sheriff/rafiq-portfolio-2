@@ -10,7 +10,7 @@ const footer = () => {
         break;
       case 'linkedin':
         window.open(
-          'https://www.linkedin.com/in/rafiq-sheriff-2ab36b282',
+          'https://www.linkedin.com/in/rafiq-sheriff',
           '_blank'
         );
         break;
@@ -48,7 +48,7 @@ const footer = () => {
             Instagram
           </a>
           <a
-            href="https://www.linkedin.com/in/rafiq-sheriff-2ab36b282"
+            href="https://www.linkedin.com/in/rafiq-sheriff"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#FFFFFF]/50 hover:text-white transition-colors text-base md:text-base font-light"
