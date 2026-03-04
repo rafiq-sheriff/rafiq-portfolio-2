@@ -27,6 +27,68 @@ type ApiResponse =
       code?: string;
     };
 
+// Helper to escape CSV fields safely
+const escapeCsvField = (value: string | number | null | undefined): string => {
+  const str = value === null || value === undefined ? '' : String(value);
+  const escaped = str.replace(/"/g, '""');
+  return `"${escaped}"`;
+};
+
+// Convert scraped data into a simple, flat CSV representation
+const buildCsvFromScrapedData = (data: ScrapedData): string => {
+  const rows: string[] = [];
+
+  // Header
+  rows.push(['section', 'subtype', 'index', 'text'].join(','));
+
+  // URL and title (single rows)
+  rows.push(
+    [
+      escapeCsvField('meta'),
+      escapeCsvField('url'),
+      escapeCsvField(0),
+      escapeCsvField(data.url),
+    ].join(',')
+  );
+
+  rows.push(
+    [
+      escapeCsvField('meta'),
+      escapeCsvField('title'),
+      escapeCsvField(0),
+      escapeCsvField(data.title ?? ''),
+    ].join(',')
+  );
+
+  // Headings
+  (['h1', 'h2', 'h3'] as const).forEach((level) => {
+    data.headings[level].forEach((text, index) => {
+      rows.push(
+        [
+          escapeCsvField('heading'),
+          escapeCsvField(level.toUpperCase()),
+          escapeCsvField(index),
+          escapeCsvField(text),
+        ].join(',')
+      );
+    });
+  });
+
+  // Paragraphs
+  data.paragraphs.forEach((text, index) => {
+    rows.push(
+      [
+        escapeCsvField('paragraph'),
+        escapeCsvField('P'),
+        escapeCsvField(index),
+        escapeCsvField(text),
+      ].join(',')
+    );
+  });
+
+  return rows.join('\r\n');
+};
+
 const SCRAPER_API_URL =
   process.env.NEXT_PUBLIC_SCRAPER_API_URL || 'http://localhost:5000/api/scrape';
 
@@ -36,6 +98,31 @@ const WebScraperSection: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [result, setResult] = useState<ScrapedData | null>(null);
+
+  const handleDownloadCsv = () => {
+    if (!result) return;
+
+    const csv = buildCsvFromScrapedData(result);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const urlObject = window.URL.createObjectURL(blob);
+
+    const anchor = document.createElement('a');
+    const filenameSafeHost = (() => {
+      try {
+        const parsed = new URL(result.url);
+        return parsed.hostname.replace(/[^a-zA-Z0-9.-]/g, '_');
+      } catch {
+        return 'scraped-site';
+      }
+    })();
+
+    anchor.href = urlObject;
+    anchor.setAttribute('download', `scraped-data-${filenameSafeHost}.csv`);
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    window.URL.revokeObjectURL(urlObject);
+  };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -143,6 +230,20 @@ const WebScraperSection: React.FC = () => {
           {/* Results */}
           {result && (
             <div className="mt-6">
+              {/* Header row with download button */}
+              <div className="mb-2 flex items-center justify-between gap-3">
+                <p className="text-xs uppercase tracking-wide text-neutral-500">
+                  Scraped Results
+                </p>
+                <button
+                  type="button"
+                  onClick={handleDownloadCsv}
+                  className="inline-flex items-center rounded-full border border-emerald-500/60 bg-transparent px-4 py-1.5 text-xs md:text-sm font-medium text-emerald-300 hover:bg-emerald-500/10 transition"
+                >
+                  Download CSV
+                </button>
+              </div>
+
               <div className="rounded-3xl border border-neutral-800 bg-black/40 p-5 md:p-6 max-h-[420px] overflow-y-auto space-y-4">
                 {/* URL + Title */}
                 <div>
