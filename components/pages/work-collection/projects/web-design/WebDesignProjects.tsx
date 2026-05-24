@@ -10,10 +10,28 @@ const projectUrls: { [key: string]: string } = {
   'A S UNIQUE HR': 'https://asuhr.ascodelabs.com/',
   'A S UNIQUE TRADERS': 'https://asuniquetraders.com/',
   'PERSONAL PORTFOLIO (old)': 'https://rafiq-sheriff-portfolio.vercel.app/',
+  'S H Health Centre': 'https://shhealthcentre.com/',
+  'Analytics Avenue': 'https://analyticsavenue.in/',
 };
 
 // Web Design Projects Data
 const webDesignProjects = [
+  {
+    id: 8,
+    title: 'S H Health Centre',
+    year: '2026',
+    image: '/images/work-collection/web/s-h-health-centre.png',
+    type: 'image' as const,
+    tags: ['Figma', 'Web Design', 'Branding'],
+  },
+  {
+    id: 9,
+    title: 'Analytics Avenue',
+    year: '2026',
+    image: '/images/work-collection/web/analytics-avenue.png',
+    type: 'image' as const,
+    tags: ['Figma', 'Web Design', 'Marketing'],
+  },
   {
     id: 1,
     title: 'A S CODELABS',

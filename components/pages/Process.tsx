@@ -7,14 +7,16 @@ const experiences = [
     title: 'Frontend Engineer',
     company: 'A S CODELABS',
     location: 'Chennai, Tamil Nadu',
-    period: 'AUG 2024 - Present',
+    period: 'Aug 2024 – Present',
     description:
-      'I work as a Frontend Engineer and UI/UX Designer, building intuitive, responsive, and visually polished digital experiences while translating complex requirements into user-friendly solutions.',
+      'Frontend Engineer focused on building scalable SaaS platforms, modern dashboards, and high-performance web applications using React.js, Next.js, TypeScript, and Tailwind CSS.',
     achievements: [
-      'Designing and implementing UI/UX workflows, wireframes, and high-fidelity interfaces focused on usability and clarity.',
-      'Developing modern, high-performance frontend applications using React, Tailwind CSS, HTML, and CSS.',
-      'Creating data-driven dashboards and visual reports using SQL and Tableau to deliver actionable insights and support business decision-making.',
-      'Delivering efficient, end-to-end digital solutions with precision and creativity in a fast-paced startup environment.',
+      'Developed responsive and high-performance web applications.',
+      'Built reusable UI components and scalable frontend architecture.',
+      'Integrated REST APIs, authentication systems, and backend services.',
+      'Developed admin dashboards and role-based SaaS platforms.',
+      'Improved application performance, accessibility, and SEO.',
+      'Collaborated with developers and designers in fast-paced startup environments.',
     ],
   },
   {

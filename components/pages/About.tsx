@@ -15,6 +15,7 @@ interface AboutProps {
   developmentSkills: Skill[];
   dataSkills: Skill[];
   otherSkills: Skill[];
+  noCodeSkills: Skill[];
   gradientFrom?: string; // e.g. '#6EE7F9'
   gradientTo?: string; // e.g. '#9333EA'
 }
@@ -24,6 +25,7 @@ export default function About({
   developmentSkills,
   dataSkills,
   otherSkills,
+  noCodeSkills,
   gradientFrom,
   gradientTo,
 }: AboutProps) {
@@ -53,10 +55,10 @@ export default function About({
             </h2>
             <div className="flex flex-col gap-4 ">
               <p className="text-lg md:text-2xl font-poppins font-light text-[#ffffff]/60 text-left">
-              I’m a Creative Visual Designer and Frontend Developer focused on crafting intuitive, visually engaging, and user-centric digital experiences. My expertise spans UI/UX design, app and web design, and frontend development, where I blend modern design principles with functional, scalable solutions to bring ideas to life.
+              Frontend & Full Stack Developer focused on building scalable SaaS platforms, modern dashboards, and high-performance web applications. Skilled in React.js, Next.js, TypeScript, Tailwind CSS, Supabase, PostgreSQL, and REST API integrations with a strong focus on responsive design, clean UI, and scalable frontend architecture.
               </p>
               <p className="text-lg md:text-2xl font-poppins font-light text-[#ffffff]/60 text-left">
-              In addition to design and development, I work with SQL, Excel, and Tableau to analyze data and create meaningful visual insights. With a strong foundation in branding, graphic design, and visual storytelling, I deliver solutions that balance aesthetics, usability, and data ensuring every experience is both impactful and purposeful.
+              Passionate about creating user-focused digital experiences that combine modern development with intuitive UI/UX design. Experienced in developing admin dashboards, AI-powered applications, and role-based systems while delivering optimized, accessible, and SEO-friendly web solutions for startups and modern businesses.
               </p>
             </div>
           </div>
@@ -81,7 +83,7 @@ export default function About({
               }}
             >
               <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-              <span className="text-[#ffffff]/60">Web Developer</span>
+              <span className="text-[#ffffff]/60">Full Stack Developer</span>
             </div>
             <div
               className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
@@ -91,7 +93,7 @@ export default function About({
               }}
             >
               <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-              <span className="text-[#ffffff]/60">UI/UX Designer</span>
+              <span className="text-[#ffffff]/60">UI/UX Engineer</span>
             </div>
             <div
               className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
@@ -101,7 +103,7 @@ export default function About({
               }}
             >
               <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-              <span className="text-[#ffffff]/60">Data Analyst</span>
+              <span className="text-[#ffffff]/60">SaaS Developer</span>
             </div>
             <div
               className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
@@ -111,17 +113,7 @@ export default function About({
               }}
             >
               <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-              <span className="text-[#ffffff]/60">Logo Designer</span>
-            </div>
-            <div
-              className="flex items-center px-4 py-2 md:w-48 justify-center rounded-full gap-2 text-xl md:text-base"
-              style={{
-                backgroundImage:
-                  'linear-gradient(to right, #1f1f1f, #272727, #2f2f2f, #373737, #3f3f3f)',
-              }}
-            >
-              <span className="inline-block h-2 w-2 rounded-full bg-[#ffffff]"></span>
-              <span className="text-[#ffffff]/60">Photographer</span>
+              <span className="text-[#ffffff]/60">React.js Developer</span>
             </div>
           </div>
         </StaggerAnimation>
@@ -131,7 +123,7 @@ export default function About({
           <div className="space-y-8 ">
             <div>
               <h3 className="text-xl text-[#1f1f1f] font-semibold mb-4 bricolage-grotesque">
-                Design & Creative Tools
+                Frontend Development
               </h3>
               <div className="space-y-3">
                 {designSkills.map((skill, index) => (
@@ -157,7 +149,7 @@ export default function About({
 
             <div>
               <h3 className="text-xl text-[#1f1f1f] font-semibold mb-4 bricolage-grotesque">
-                Development & Web
+                Backend & APIs
               </h3>
               <div className="space-y-3">
                 {developmentSkills.map((skill, index) => (
@@ -183,7 +175,7 @@ export default function About({
 
             <div>
               <h3 className="text-xl text-[#1f1f1f] font-semibold mb-4 bricolage-grotesque">
-                Data
+                Tools & Platforms
               </h3>
               <div className="space-y-3">
                 {dataSkills.map((skill, index) => (
@@ -209,10 +201,36 @@ export default function About({
 
             <div>
               <h3 className="text-xl text-[#1f1f1f] font-semibold mb-4 bricolage-grotesque">
-                Other Skills
+                AI & Automation
               </h3>
               <div className="space-y-3">
                 {otherSkills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between"
+                  >
+                    <span className="text-[#1f1f1f]">{skill.name}</span>
+                    <div className="flex items-center gap-2">
+                      <ProgressBar
+                        level={skill.level}
+                        delay={index * 0.1}
+                        duration={1.2}
+                      />
+                      <span className="text-[#1f1f1f] text-sm w-8">
+                        {skill.level}%
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl text-[#1f1f1f] font-semibold mb-4 bricolage-grotesque">
+                No Code Tools
+              </h3>
+              <div className="space-y-3">
+                {noCodeSkills.map((skill, index) => (
                   <div
                     key={index}
                     className="flex items-center justify-between"

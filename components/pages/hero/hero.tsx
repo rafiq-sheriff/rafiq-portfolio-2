@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Navbar from '@/components/navigation/navbar';
-import MobileNavbar from '@/components/navigation/mobile-navbar';
 import ShinyText from '@/components/effects/ShinyText';
 import GlareHover from '@/components/effects/GlareHover';
 import { MorphingText } from '@/components/ui/morphing-text';
 import { ScrollAnimation } from '@/components/animations';
-import { scrollToElement } from '@/lib/scrollUtils';
+import { downloadCV } from '@/lib/downloadUtils';
 
 const Hero = () => {
   return (
@@ -15,18 +14,7 @@ const Hero = () => {
       <div className="md:hidden h-ful bg-[radial-gradient(circle_at_center,_#545454_0%,_#1E1E1E_100%)] relative overflow-hidden rounded-3xl p-3">
         {/* Sticky Mobile Navbar */}
         <div className="fixed top-0 left-0 right-0 z-50 p-2 px-4 mt-2">
-          <div
-            className="rounded-2xl px-4 py-3"
-            style={{
-              background:
-              'rgba(84,84,84,0.38)',
-              border: '1px solid rgba(255,255,255,0.10)',
-              backdropFilter: 'blur(5px) saturate(120%)',
-              WebkitBackdropFilter: 'blur(0px) saturate(120%)',
-            }}
-          >
-            <MobileNavbar />
-          </div>
+          <Navbar />
         </div>
         {/* Background Image - Behind content */}
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-center z-0">
@@ -68,7 +56,7 @@ const Hero = () => {
                       />
                     </div>
                     <ShinyText
-                      text="Ui/Ux & Frontend Engineer"
+                      text="Frontend & Full Stack Developer"
                       disabled={false}
                       speed={2}
                       className="text-white/50 text-sm font-light"
@@ -79,7 +67,9 @@ const Hero = () => {
                 {/* Description Text */}
                 <div className="mb-12">
                   <p className="text-white/50 text-xl font-light leading-relaxed text-left">
-                    A Visual Designer And Web Developer Crafting Digital Stories
+                    Creating High-Performance Digital Products
+                    <br />
+                    With Modern Technologies
                   </p>
                 </div>
               </div>
@@ -96,7 +86,7 @@ const Hero = () => {
                     </span>
                     <span className="block text-[1rem] font-medium tracking-wide">
                       <MorphingText
-                        texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
+                        texts={['RAFIQ SHERIFF S', 'FULL STACK DEVELOPER']}
                         className="text-white text-3xl font-medium tracking-wide"
                       />
                     </span>
@@ -123,16 +113,7 @@ const Hero = () => {
                       WebkitBackdropFilter: 'blur(0px) saturate(10%)',
                     }}
                     onClick={() => {
-                      // Use improved scroll utility
-                      if (!scrollToElement('work')) {
-                        // Fallback: scroll down by viewport height
-                        setTimeout(() => {
-                          window.scrollTo({
-                            top: window.scrollY + window.innerHeight,
-                            behavior: 'smooth',
-                          });
-                        }, 200);
-                      }
+                      downloadCV();
                     }}
                   >
                     <button
@@ -144,7 +125,7 @@ const Hero = () => {
                       }}
                     >
                       <ShinyText
-                        text="View Projects"
+                        text="Download CV"
                         disabled={false}
                         speed={2}
                         className="text-white font-sora text-xl font-normal"
@@ -174,18 +155,7 @@ const Hero = () => {
 
         {/* Sticky Navbar */}
         <div className="fixed top-0 left-0 right-0 z-50 p-6">
-          <div
-            className="p-2 rounded-3xl"
-            style={{
-              background:
-                'rgba(84,84,84,0.38)',
-              border: '1px solid rgba(255,255,255,0.10)',
-              backdropFilter: 'blur(5px) saturate(120%)',
-              WebkitBackdropFilter: 'blur(0px) saturate(120%)',
-            }}
-          >
-            <Navbar />
-          </div>
+          <Navbar />
         </div>
 
         {/* Main Container with consistent gaps */}
@@ -215,7 +185,7 @@ const Hero = () => {
                   />
                 </div>
                 <ShinyText
-                  text="UI/UX & Frontend Engineer"
+                    text="Frontend & Full Stack Developer"
                   disabled={false}
                   speed={2}
                   className="text-white/50 text-sm font-light"
@@ -224,9 +194,9 @@ const Hero = () => {
 
               {/* Description */}
               <p className="text-white/50 text-xl font-light leading-relaxed max-w-md text-right">
-                A Visual Designer And Web Developer
+                Creating High-Performance Digital Products
                 <br />
-                Crafting Digital Stories
+                With Modern Technologies
               </p>
             </div>
           </ScrollAnimation>
@@ -242,7 +212,7 @@ const Hero = () => {
                   </span>
                   <span className="block text-6xl aboreto-regular tracking-wide whitespace-nowrap">
                     <MorphingText
-                      texts={['RAFIQ SHERIFF S', 'FRONTEND ENGINEER']}
+                      texts={['RAFIQ SHERIFF S', 'FULL STACK DEVELOPER']}
                       className="text-white text-6xl aboreto-regular tracking-wide whitespace-nowrap"
                     />
                   </span>
@@ -268,16 +238,7 @@ const Hero = () => {
                     WebkitBackdropFilter: 'blur(0px) saturate(10%)',
                   }}
                   onClick={() => {
-                    // Use improved scroll utility
-                    if (!scrollToElement('work')) {
-                      // Fallback: scroll down by viewport height
-                      setTimeout(() => {
-                        window.scrollTo({
-                          top: window.scrollY + window.innerHeight,
-                          behavior: 'smooth',
-                        });
-                      }, 200);
-                    }
+                    downloadCV();
                   }}
                 >
                   <button
@@ -301,7 +262,7 @@ const Hero = () => {
                     }}
                   >
                     <ShinyText
-                      text="View Projects"
+                      text="Download CV"
                       disabled={false}
                       speed={3}
                       className="text-white font-sora text-base font-normal"
