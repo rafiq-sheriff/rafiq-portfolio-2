@@ -28,7 +28,7 @@ const Navbar = () => {
         openMenuButtonColor="#1e1e1e"
         changeMenuColorOnOpen
         colors={['#1e1e1e', '#545454']}
-        logoUrl="/assets/icons/logo.svg"
+        logoUrl="/assets/icons/logo2.svg"
         accentColor="#545454"
         isFixed
       />

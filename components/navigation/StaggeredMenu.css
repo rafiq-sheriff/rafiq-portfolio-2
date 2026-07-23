@@ -63,7 +63,7 @@
 
  .sm-logo-img {
    display: block;
-  height: 32px;
+  height: 50px;
    width: auto;
    object-fit: contain;
    transition: filter 0.3s ease;
@@ -90,27 +90,21 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(42, 42, 42, 0.7) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  gap: 0.4rem;
+  background: #ffffff !important;
+  border: none;
   border-radius: 9999px;
-  backdrop-filter: blur(5px) saturate(120%);
-  -webkit-backdrop-filter: blur(0px) saturate(10%);
   cursor: pointer;
-  color: #e9e9ef;
+  overflow: visible;
+  padding: 0.55rem 0.95rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   line-height: 1;
-  overflow: visible;
-  padding: 0.5rem 0.85rem;
 }
 
 .sm-toggle[data-open='true'] {
-  background: transparent;
+  background: #ffffff !important;
   border: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -146,6 +140,9 @@
   height: 1em;
   line-height: 1;
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #545454 0%, #1e1e1e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
  .sm-icon {
@@ -171,8 +168,8 @@
   top: 50%;
   width: 100%;
   height: 2px;
-  background: currentColor;
-  border-radius: 2px;
+  background: linear-gradient(135deg, #545454 0%, #1e1e1e 100%) !important;
+  border-radius: 1px;
   transform: translate(-50%, -50%);
   will-change: transform;
 }
@@ -442,19 +439,27 @@
    }
  }
 
- @media (max-width: 768px) {
-   .staggered-menu-wrapper[data-open] .rosehot {
-     color: #545454;
-   }
+  @media (max-width: 768px) {
+    .staggered-menu-panel {
+      padding-top: 8.5em;
+    }
 
-   .staggered-menu-wrapper[data-open] .sm-logo-img {
-     filter: invert(33%) sepia(12%) saturate(0%) brightness(68%) contrast(88%);
-   }
+    .staggered-menu-wrapper[data-open] .rosehot {
+      background: linear-gradient(135deg, #545454 0%, #1e1e1e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-   .rosehot {
-     color: #ffffff;
-   }
- }
+    .staggered-menu-wrapper:not([data-open]) .rosehot {
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+    }
+
+    .rosehot {
+      color: #ffffff;
+    }
+  }
 
  @media (max-width: 640px) {
    .staggered-menu-panel {

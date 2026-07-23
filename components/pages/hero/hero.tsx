@@ -29,7 +29,7 @@ const Hero = () => {
         </div>
 
         {/* Content Container - All text and button in one div */}
-        <div className="relative z-10 h-full flex flex-col justify-between pt-20">
+        <div className="relative z-10 h-full flex flex-col justify-between pt-28">
           {/* Main Content Wrapper */}
           <div className="flex flex-col justify-between h-full gap-[17rem]">
             {/* First Section - UI/UX Badge and Description */}
@@ -47,13 +47,9 @@ const Hero = () => {
                       WebkitBackdropFilter: 'blur(0px) saturate(10%)',
                     }}
                   >
-                    <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center">
-                      <ShinyText
-                        text="●"
-                        disabled={false}
-                        speed={2}
-                        className="text-white text-xs"
-                      />
+                    <div className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                     </div>
                     <ShinyText
                       text="Frontend & Full Stack Developer"
@@ -67,9 +63,7 @@ const Hero = () => {
                 {/* Description Text */}
                 <div className="mb-12">
                   <p className="text-white/50 text-xl font-light leading-relaxed text-left">
-                    Creating High-Performance Digital Products
-                    <br />
-                    With Modern Technologies
+                    Creating High-Performance Digital Products With Modern Technologies
                   </p>
                 </div>
               </div>
@@ -84,10 +78,10 @@ const Hero = () => {
                     <span className="block text-2xl mb-2 text-white/50">
                       HI I'M
                     </span>
-                    <span className="block text-[1rem] font-medium tracking-wide">
+                    <span className="block text-[1rem] font-medium tracking-wide whitespace-nowrap">
                       <MorphingText
                         texts={['RAFIQ SHERIFF S', 'FULL STACK DEVELOPER']}
-                        className="text-white text-3xl font-medium tracking-wide"
+                        className="text-white text-[6.8vw] min-[400px]:text-2xl sm:text-3xl font-medium tracking-wide whitespace-nowrap"
                       />
                     </span>
                   </h1>
@@ -176,13 +170,9 @@ const Hero = () => {
                   WebkitBackdropFilter: 'blur(0px) saturate(10%)',
                 }}
               >
-                <div className="w-2 h-2 bg-[#ffffff] rounded-full flex items-center justify-center">
-                  <ShinyText
-                    text="●"
-                    disabled={false}
-                    speed={2}
-                    className="text-white text-xs"
-                  />
+                <div className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                 </div>
                 <ShinyText
                     text="Frontend & Full Stack Developer"

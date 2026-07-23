@@ -2,6 +2,7 @@
 
 import React, {
    useCallback,
+   useEffect,
    useLayoutEffect,
    useRef,
    useState,
@@ -54,7 +55,7 @@ import { downloadCV } from '@/lib/downloadUtils';
    displaySocials = true,
    displayItemNumbering = true,
    className,
-   logoUrl = '/assets/icons/logo.svg',
+   logoUrl = '/assets/icons/logo2.svg',
    menuButtonColor = '#fff',
    openMenuButtonColor = '#fff',
    accentColor = '#5227FF',
@@ -71,6 +72,7 @@ import { downloadCV } from '@/lib/downloadUtils';
 
    const [open, setOpen] = useState(false);
   const [isReady, setIsReady] = useState(false);
+   const [isScrolled, setIsScrolled] = useState(false);
    const openRef = useRef(false);
    const panelRef = useRef<HTMLDivElement | null>(null);
    const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -90,6 +92,22 @@ import { downloadCV } from '@/lib/downloadUtils';
    const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
    const busyRef = useRef(false);
    const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+
+      handleScroll();
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
    useLayoutEffect(() => {
      const ctx = gsap.context(() => {
@@ -495,11 +513,11 @@ import { downloadCV } from '@/lib/downloadUtils';
          })()}
        </div>
       <header className="staggered-menu-header" aria-label="Main navigation header">
-        <div className="sm-navbar-container flex items-center justify-between w-full px-5 py-4 rounded-3xl">
-          <div className="flex items-center gap-4 cursor-pointer">
+        <div className="sm-navbar-container flex items-center justify-between w-full ">
+          <div className="flex items-center cursor-pointer">
             <div className="sm-logo" aria-label="Logo">
               <Image
-                src={logoUrl || '/assets/icons/logo.svg'}
+                src={logoUrl || '/assets/icons/logo2.svg'}
                 alt="Logo"
                 className="sm-logo-img"
                 draggable={false}
@@ -508,9 +526,14 @@ import { downloadCV } from '@/lib/downloadUtils';
               />
             </div>
             <span
-              className="rosehot text-white text-2xl flex items-center justify-center hover:text-white/80 transition-colors"
+              className={`rosehot text-white text-3xl flex items-center justify-center hover:text-white/80 transition-all duration-500 ease-in-out ${
+                isScrolled
+                  ? 'opacity-0 max-w-0 ml-0 pointer-events-none overflow-hidden'
+                  : 'opacity-100 max-w-[200px] ml-4'
+              }`}
               style={{
                 letterSpacing: '0.10em',
+                whiteSpace: 'nowrap',
               }}
             >
               SHERIFIQ
