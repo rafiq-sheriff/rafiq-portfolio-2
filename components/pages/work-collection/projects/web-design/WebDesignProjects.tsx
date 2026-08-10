@@ -3,6 +3,7 @@ import { StaggerAnimation } from '@/components/animations';
 
 // Project URLs mapping
 const projectUrls: { [key: string]: string } = {
+  SHERIFIQ: 'https://sherifiq.vercel.app',
   'A S CODELABS': 'https://ascodelabs.com/',
   'A S UNIQUE GROUP': 'https://asuniquegroup.com/',
   'HELIX AI': 'https://helix-ai.ascodelabs.com/',
@@ -16,6 +17,14 @@ const projectUrls: { [key: string]: string } = {
 
 // Web Design Projects Data
 const webDesignProjects = [
+  {
+    id: 10,
+    title: 'SHERIFIQ',
+    year: '2026',
+    image: '/images/work-collection/web/sherifiq.png',
+    type: 'image' as const,
+    tags: ['Figma', 'React', 'Tailwind', 'Next.js'],
+  },
   {
     id: 8,
     title: 'S H Health Centre',

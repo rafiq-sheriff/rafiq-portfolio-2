@@ -26,7 +26,7 @@ export const downloadFile = (filePath: string, fileName?: string) => {
  */
 export const downloadCV = () => {
   downloadFile(
-    '/assets/resume/Rafiq_Sheriff.pdf',
-    'Rafiq_Sheriff.pdf'
+    '/assets/resume/Rafiq_Sheriff_S.pdf',
+    'Rafiq_Sheriff_S.pdf'
   );
 };
